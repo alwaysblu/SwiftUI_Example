@@ -14,6 +14,7 @@
 		259DF077285B2281001D7F90 /* SwiftUI_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF076285B2281001D7F90 /* SwiftUI_ExampleTests.swift */; };
 		259DF081285B2281001D7F90 /* SwiftUI_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF080285B2281001D7F90 /* SwiftUI_ExampleUITests.swift */; };
 		259DF083285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */; };
+		259DF095285B282C001D7F90 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 259DF094285B282C001D7F90 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259DF095285B282C001D7F90 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = SwiftUI_Example;
+			packageProductDependencies = (
+				259DF094285B282C001D7F90 /* ComposableArchitecture */,
+			);
 			productName = SwiftUI_Example;
 			productReference = 259DF062285B2281001D7F90 /* SwiftUI_Example.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 259DF059285B2281001D7F90;
+			packageReferences = (
+				259DF093285B282C001D7F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 259DF063285B2281001D7F90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -577,6 +585,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		259DF093285B282C001D7F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		259DF094285B282C001D7F90 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 259DF093285B282C001D7F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 259DF05A285B2281001D7F90 /* Project object */;
 }
