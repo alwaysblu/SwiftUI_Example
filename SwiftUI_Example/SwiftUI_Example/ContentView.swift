@@ -8,14 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+  @State private var showReaction = false
+
+  var body: some View {
+
+    Image("Logo")
+      .offset(y: showReaction ? 0 : 20)
+      .scaleEffect(showReaction ? 1 : 0,
+                   anchor: .bottom)
+      .animation(
+        .interpolatingSpring(stiffness: 170,
+                             damping: 8)
+        .delay(0.1),
+        value: showReaction
+      )
+      .onAppear{
+        showReaction.toggle()
+      }
+  }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
