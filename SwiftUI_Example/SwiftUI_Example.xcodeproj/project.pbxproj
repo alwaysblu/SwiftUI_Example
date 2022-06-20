@@ -22,7 +22,8 @@
 		259DF09F28600AD6001D7F90 /* CalendarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF09A28600AD6001D7F90 /* CalendarState.swift */; };
 		259DF0A2286013E5001D7F90 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A1286013E5001D7F90 /* DayOfWeek.swift */; };
 		259DF0A4286027CE001D7F90 /* DayInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A3286027CE001D7F90 /* DayInformation.swift */; };
-		259DF0A62860C1A5001D7F90 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A52860C1A5001D7F90 /* DimView.swift */; };
+		259DF0A62860C1A5001D7F90 /* CalendarDimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */; };
+		8AF4182E2860E71300BD95E7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF4182D2860E71300BD95E7 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,7 @@
 		259DF09A28600AD6001D7F90 /* CalendarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarState.swift; sourceTree = "<group>"; };
 		259DF0A1286013E5001D7F90 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
 		259DF0A3286027CE001D7F90 /* DayInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformation.swift; sourceTree = "<group>"; };
-		259DF0A52860C1A5001D7F90 /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
+		259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDimView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF4182E2860E71300BD95E7 /* ComposableArchitecture in Frameworks */,
 				259DF095285B282C001D7F90 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,7 +158,7 @@
 				259DF09A28600AD6001D7F90 /* CalendarState.swift */,
 				259DF0A1286013E5001D7F90 /* DayOfWeek.swift */,
 				259DF0A3286027CE001D7F90 /* DayInformation.swift */,
-				259DF0A52860C1A5001D7F90 /* DimView.swift */,
+				259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -179,6 +181,7 @@
 			name = SwiftUI_Example;
 			packageProductDependencies = (
 				259DF094285B282C001D7F90 /* ComposableArchitecture */,
+				8AF4182D2860E71300BD95E7 /* ComposableArchitecture */,
 			);
 			productName = SwiftUI_Example;
 			productReference = 259DF062285B2281001D7F90 /* SwiftUI_Example.app */;
@@ -254,6 +257,7 @@
 			mainGroup = 259DF059285B2281001D7F90;
 			packageReferences = (
 				259DF093285B282C001D7F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				8AF4182C2860E71300BD95E7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 259DF063285B2281001D7F90 /* Products */;
 			projectDirPath = "";
@@ -306,7 +310,7 @@
 				259DF09C28600AD6001D7F90 /* CalendarView.swift in Sources */,
 				259DF09E28600AD6001D7F90 /* CalendarReducer.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
-				259DF0A62860C1A5001D7F90 /* DimView.swift in Sources */,
+				259DF0A62860C1A5001D7F90 /* CalendarDimView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI_Example/Preview Content\"";
+				DEVELOPMENT_TEAM = WX8CNHALLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -493,6 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI_Example/Preview Content\"";
+				DEVELOPMENT_TEAM = WX8CNHALLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -635,12 +641,25 @@
 				minimumVersion = 0.9.0;
 			};
 		};
+		8AF4182C2860E71300BD95E7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		259DF094285B282C001D7F90 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 259DF093285B282C001D7F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		8AF4182D2860E71300BD95E7 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF4182C2860E71300BD95E7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */

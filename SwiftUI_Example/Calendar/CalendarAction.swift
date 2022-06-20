@@ -8,9 +8,9 @@
 import CoreGraphics
 import ComposableArchitecture
 
-enum CalendarAction: Equatable, BindableAction {
+enum CalendarAction: Equatable {
   case showDatePickerView
   case setCurrentDay(Int)
   case setItemSize(CGFloat)
-  case binding(BindingAction<CalendarState>)
+  case setDate(Result<Date, Never>)
 }

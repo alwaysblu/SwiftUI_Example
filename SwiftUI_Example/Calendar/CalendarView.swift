@@ -49,15 +49,15 @@ struct CalendarView: View {
     .background(.white)
   }
 
-  private var datePicker: some View {
-    DatePicker(
-      "",
-      selection: viewStore.$date,
-      displayedComponents: [.date]
-    )
-    .background(.white)
-    .datePickerStyle(.compact)
-  }
+//  private var datePicker: some View {
+//    DatePicker(
+//      "",
+//      selection: viewStore.$date,
+//      displayedComponents: [.date]
+//    )
+//    .background(.white)
+//    .datePickerStyle(.compact)
+//  }
 
   private var datePickerButton: some View {
     HStack {
@@ -165,7 +165,7 @@ struct CalendarView_Previews: PreviewProvider {
   }
 
   static let store: CalendarStore = .init(
-    initialState: .init(),
+    initialState: .init(year: 2022, month: 2),
     reducer: .init(),
     environment: .init()
   )

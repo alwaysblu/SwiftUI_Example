@@ -9,4 +9,6 @@ import Combine
 import SwiftUI
 
 struct CalendarEnvironment {
+    let dimView = CalendarDimView.shared
+    let scheduler = DispatchQueue.main
 }

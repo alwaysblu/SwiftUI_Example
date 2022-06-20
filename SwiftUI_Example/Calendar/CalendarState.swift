@@ -15,16 +15,14 @@ struct CalendarState: Equatable {
   var currentDay: Int?
   var itemSize: CGSize = .zero
   var isDatePickerShowUp: Bool
-  @BindableState var date: Date
 
   init(
-    year: Int = 2022,
-    month: Int = 6,
+    year: Int,
+    month: Int,
     totalGrid: [DayInformation] = [],
     currentDay: Int? = nil,
     itemSize: CGSize = .zero,
-    isDatePickerShowUp: Bool = false,
-    date: Date = .now
+    isDatePickerShowUp: Bool = false
   ) {
     self.year = year
     self.month = month
@@ -41,6 +39,5 @@ struct CalendarState: Equatable {
     self.currentDay = currentDay
     self.itemSize = itemSize
     self.isDatePickerShowUp = isDatePickerShowUp
-    self.date = date
   }
 }
