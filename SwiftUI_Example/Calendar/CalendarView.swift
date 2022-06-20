@@ -34,18 +34,42 @@ struct CalendarView: View {
   }
 
   var body: some View {
-    VStack {
-      datePickerButton
-      ScrollView(showsIndicators: false) {
-        dayGrid
-          .padding(.horizontal, 0)
+    ZStack {
+      ZStack {
+        Button {
+
+        } label: {
+          Text("")
+        }
       }
-      .frame(width: nil, height: 140, alignment: .center)
-      .fixedSize(horizontal: false, vertical: true)
+      VStack {
+        Spacer()
+        datePicker
+      }
+      VStack {
+        datePickerButton
+        dayOfWeekGrid
+        ScrollView(showsIndicators: false) {
+          Spacer(minLength: 15)
+          dayGrid
+        }
+        .frame(width: nil, height: 150, alignment: .center)
+        .fixedSize(horizontal: false, vertical: true)
+      }
+      .padding(.horizontal, 20)
+      .padding(.vertical, 20)
+      .background(.white)
     }
-    .padding(.horizontal, 24)
-    .padding(.vertical, 26)
+  }
+
+  private var datePicker: some View {
+    DatePicker(
+      "",
+      selection: viewStore.$date,
+      displayedComponents: [.date]
+    )
     .background(.white)
+    .datePickerStyle(.wheel)
   }
 
   private var datePickerButton: some View {
@@ -65,55 +89,64 @@ struct CalendarView: View {
 
   private var dayOfWeekGrid: some View {
     LazyVGrid(
-      columns: dayColumns,
-      spacing: 10
+      columns: dayColumns
     ) {
       ForEach(DayOfWeek.allCases, id: \.self) { dayOfWeek in
-        Text(dayOfWeek.description).font(.body)
+        Text(dayOfWeek.description)
+          .font(.body)
       }
-    }.background(.white)
+    }
+    .background(.white)
   }
 
   private var dayGrid: some View {
     LazyVGrid(
       columns: dayColumns,
-      spacing: 10,
-      pinnedViews: .sectionHeaders) {
-        Section(header: dayOfWeekGrid) {
-          ForEach(viewStore.totalGrid, id: \.self) { day in
-            makeDayView(day)
-          }
-        }
+      spacing: 15
+    ) {
+      ForEach(viewStore.totalGrid, id: \.self) { day in
+        makeDayView(day)
       }
+    }
   }
 
   private func makeDayView(_ data: DayInformation) -> some View {
     VStack(spacing: 6) {
-      HStack(spacing: 4) {
-        if data.isOrderDay {
-          Image("cart")
+      ZStack {
+        if viewStore.currentDay == data.day {
+          Circle()
+            .scale(2)
+            .fill(.blue)
+        }
+        HStack {
+          if data.isOrderDay {
+            Image("cart")
+          }
+          Spacer()
         }
         Text(String(format: "%02d", data.day))
+          .foregroundColor(.black)
           .font(.subheadline)
       }
-      if data.heartCount > 0 {
-        HStack(spacing: 4) {
+      if data.isHeartExist {
+        HStack(spacing: 2) {
           Image("heart")
             .resizable()
             .frame(width: 10, height: 10, alignment: .center)
-          Text("\(data.heartCount*10)")
+          Text("\(data.heartCount)")
             .font(.caption2)
         }
+        .frame(
+          width: 25,
+          height: 12,
+          alignment: .center
+        )
       } else {
-        HStack(spacing: 4) {
-          Image("")
-            .resizable()
-            .frame(width: 10, height: 10, alignment: .center)
-          Text("")
-            .font(.caption2)
-        }
+        Spacer(minLength: 12)
       }
-    }
+    }.onTapGesture {
+      viewStore.send(.setCurrentDay(data.day))
+    }.frame(width: 40)
   }
 }
 

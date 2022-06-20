@@ -11,4 +11,5 @@ struct DayInformation: Hashable {
   var day: Int
   var heartCount: Int
   var isOrderDay: Bool
+  var isHeartExist: Bool
 }
