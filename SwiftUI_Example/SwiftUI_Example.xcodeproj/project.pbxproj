@@ -15,6 +15,13 @@
 		259DF081285B2281001D7F90 /* SwiftUI_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF080285B2281001D7F90 /* SwiftUI_ExampleUITests.swift */; };
 		259DF083285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */; };
 		259DF095285B282C001D7F90 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 259DF094285B282C001D7F90 /* ComposableArchitecture */; };
+		259DF09B28600AD6001D7F90 /* CalendarAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF09628600AD6001D7F90 /* CalendarAction.swift */; };
+		259DF09C28600AD6001D7F90 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF09728600AD6001D7F90 /* CalendarView.swift */; };
+		259DF09D28600AD6001D7F90 /* CalendarEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF09828600AD6001D7F90 /* CalendarEnvironment.swift */; };
+		259DF09E28600AD6001D7F90 /* CalendarReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF09928600AD6001D7F90 /* CalendarReducer.swift */; };
+		259DF09F28600AD6001D7F90 /* CalendarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF09A28600AD6001D7F90 /* CalendarState.swift */; };
+		259DF0A2286013E5001D7F90 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A1286013E5001D7F90 /* DayOfWeek.swift */; };
+		259DF0A4286027CE001D7F90 /* DayInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A3286027CE001D7F90 /* DayInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,13 @@
 		259DF07C285B2281001D7F90 /* SwiftUI_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		259DF080285B2281001D7F90 /* SwiftUI_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleUITests.swift; sourceTree = "<group>"; };
 		259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		259DF09628600AD6001D7F90 /* CalendarAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAction.swift; sourceTree = "<group>"; };
+		259DF09728600AD6001D7F90 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		259DF09828600AD6001D7F90 /* CalendarEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEnvironment.swift; sourceTree = "<group>"; };
+		259DF09928600AD6001D7F90 /* CalendarReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarReducer.swift; sourceTree = "<group>"; };
+		259DF09A28600AD6001D7F90 /* CalendarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarState.swift; sourceTree = "<group>"; };
+		259DF0A1286013E5001D7F90 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		259DF0A3286027CE001D7F90 /* DayInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,7 @@
 		259DF059285B2281001D7F90 = {
 			isa = PBXGroup;
 			children = (
+				259DF0A028600ADA001D7F90 /* Calendar */,
 				259DF064285B2281001D7F90 /* SwiftUI_Example */,
 				259DF075285B2281001D7F90 /* SwiftUI_ExampleTests */,
 				259DF07F285B2281001D7F90 /* SwiftUI_ExampleUITests */,
@@ -127,6 +142,20 @@
 				259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */,
 			);
 			path = SwiftUI_ExampleUITests;
+			sourceTree = "<group>";
+		};
+		259DF0A028600ADA001D7F90 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				259DF09628600AD6001D7F90 /* CalendarAction.swift */,
+				259DF09728600AD6001D7F90 /* CalendarView.swift */,
+				259DF09828600AD6001D7F90 /* CalendarEnvironment.swift */,
+				259DF09928600AD6001D7F90 /* CalendarReducer.swift */,
+				259DF09A28600AD6001D7F90 /* CalendarState.swift */,
+				259DF0A1286013E5001D7F90 /* DayOfWeek.swift */,
+				259DF0A3286027CE001D7F90 /* DayInformation.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259DF09B28600AD6001D7F90 /* CalendarAction.swift in Sources */,
+				259DF0A4286027CE001D7F90 /* DayInformation.swift in Sources */,
+				259DF0A2286013E5001D7F90 /* DayOfWeek.swift in Sources */,
+				259DF09D28600AD6001D7F90 /* CalendarEnvironment.swift in Sources */,
 				259DF068285B2281001D7F90 /* ContentView.swift in Sources */,
+				259DF09F28600AD6001D7F90 /* CalendarState.swift in Sources */,
+				259DF09C28600AD6001D7F90 /* CalendarView.swift in Sources */,
+				259DF09E28600AD6001D7F90 /* CalendarReducer.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
