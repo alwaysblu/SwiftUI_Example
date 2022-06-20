@@ -24,6 +24,7 @@
 		259DF0A4286027CE001D7F90 /* DayInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A3286027CE001D7F90 /* DayInformation.swift */; };
 		259DF0A62860C1A5001D7F90 /* CalendarDimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */; };
 		8AF4182E2860E71300BD95E7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF4182D2860E71300BD95E7 /* ComposableArchitecture */; };
+		8AF4183028610E4B00BD95E7 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4182F28610E4B00BD95E7 /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		259DF0A1286013E5001D7F90 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
 		259DF0A3286027CE001D7F90 /* DayInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformation.swift; sourceTree = "<group>"; };
 		259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDimView.swift; sourceTree = "<group>"; };
+		8AF4182F28610E4B00BD95E7 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				259DF0A1286013E5001D7F90 /* DayOfWeek.swift */,
 				259DF0A3286027CE001D7F90 /* DayInformation.swift */,
 				259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */,
+				8AF4182F28610E4B00BD95E7 /* Int+Extension.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				259DF0A2286013E5001D7F90 /* DayOfWeek.swift in Sources */,
 				259DF09D28600AD6001D7F90 /* CalendarEnvironment.swift in Sources */,
 				259DF068285B2281001D7F90 /* ContentView.swift in Sources */,
+				8AF4183028610E4B00BD95E7 /* Int+Extension.swift in Sources */,
 				259DF09F28600AD6001D7F90 /* CalendarState.swift in Sources */,
 				259DF09C28600AD6001D7F90 /* CalendarView.swift in Sources */,
 				259DF09E28600AD6001D7F90 /* CalendarReducer.swift in Sources */,
