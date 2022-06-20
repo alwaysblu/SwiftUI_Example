@@ -34,32 +34,19 @@ struct CalendarView: View {
   }
 
   var body: some View {
-    ZStack {
-      ZStack {
-        Button {
-
-        } label: {
-          Text("")
-        }
+    VStack {
+      datePickerButton
+      dayOfWeekGrid
+      ScrollView(showsIndicators: false) {
+        Spacer(minLength: 15)
+        dayGrid
       }
-      VStack {
-        Spacer()
-        datePicker
-      }
-      VStack {
-        datePickerButton
-        dayOfWeekGrid
-        ScrollView(showsIndicators: false) {
-          Spacer(minLength: 15)
-          dayGrid
-        }
-        .frame(width: nil, height: 150, alignment: .center)
-        .fixedSize(horizontal: false, vertical: true)
-      }
-      .padding(.horizontal, 20)
-      .padding(.vertical, 20)
-      .background(.white)
+      .frame(width: nil, height: 150, alignment: .center)
+      .fixedSize(horizontal: false, vertical: true)
     }
+    .padding(.horizontal, 15)
+    .padding(.vertical, 20)
+    .background(.white)
   }
 
   private var datePicker: some View {
@@ -69,13 +56,13 @@ struct CalendarView: View {
       displayedComponents: [.date]
     )
     .background(.white)
-    .datePickerStyle(.wheel)
+    .datePickerStyle(.compact)
   }
 
   private var datePickerButton: some View {
     HStack {
       Button {
-
+        viewStore.send(.showDatePickerView)
       } label: {
         HStack() {
           Text("\(viewStore.year) \(viewStore.month)")
@@ -96,6 +83,7 @@ struct CalendarView: View {
           .font(.body)
       }
     }
+    .padding(.horizontal, 5)
     .background(.white)
   }
 
@@ -107,7 +95,7 @@ struct CalendarView: View {
       ForEach(viewStore.totalGrid, id: \.self) { day in
         makeDayView(day)
       }
-    }
+    }.padding(.horizontal, 5)
   }
 
   private func makeDayView(_ data: DayInformation) -> some View {

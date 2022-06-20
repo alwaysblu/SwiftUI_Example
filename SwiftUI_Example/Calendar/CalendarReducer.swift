@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import CoreGraphics
 import SwiftUI
+import UIKit
 
 typealias CalendarReducer = Reducer<
   CalendarState,
@@ -27,7 +28,15 @@ extension CalendarReducer {
             return .none
             
           case .showDatePickerView:
-            state.isDatePickerShowUp.toggle()
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            let dimView = UIView()
+
+            dimView.frame = window.frame
+            dimView.center = window.center
+            dimView.backgroundColor = .black
+            dimView.alpha = 0.5
+
+            UIApplication.shared.windows.first?.addSubview(dimView)
             return .none
 
           case .setCurrentDay(let currentDay):
@@ -42,6 +51,8 @@ extension CalendarReducer {
           case .binding(\.$date):
             let dateFormatter = DateFormatter()
 
+            dateFormatter.dateFormat = "yyyy"
+            state.year = Int(dateFormatter.string(from: state.date)) ?? 1
             dateFormatter.dateFormat = "M"
             state.month = Int(dateFormatter.string(from: state.date)) ?? 1
             dateFormatter.dateFormat = "d"

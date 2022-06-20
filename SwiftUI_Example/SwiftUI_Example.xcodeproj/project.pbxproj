@@ -22,6 +22,7 @@
 		259DF09F28600AD6001D7F90 /* CalendarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF09A28600AD6001D7F90 /* CalendarState.swift */; };
 		259DF0A2286013E5001D7F90 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A1286013E5001D7F90 /* DayOfWeek.swift */; };
 		259DF0A4286027CE001D7F90 /* DayInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A3286027CE001D7F90 /* DayInformation.swift */; };
+		259DF0A62860C1A5001D7F90 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A52860C1A5001D7F90 /* DimView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		259DF09A28600AD6001D7F90 /* CalendarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarState.swift; sourceTree = "<group>"; };
 		259DF0A1286013E5001D7F90 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
 		259DF0A3286027CE001D7F90 /* DayInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformation.swift; sourceTree = "<group>"; };
+		259DF0A52860C1A5001D7F90 /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				259DF09A28600AD6001D7F90 /* CalendarState.swift */,
 				259DF0A1286013E5001D7F90 /* DayOfWeek.swift */,
 				259DF0A3286027CE001D7F90 /* DayInformation.swift */,
+				259DF0A52860C1A5001D7F90 /* DimView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				259DF09C28600AD6001D7F90 /* CalendarView.swift in Sources */,
 				259DF09E28600AD6001D7F90 /* CalendarReducer.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
+				259DF0A62860C1A5001D7F90 /* DimView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
