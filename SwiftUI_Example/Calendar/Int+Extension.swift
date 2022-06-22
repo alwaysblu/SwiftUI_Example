@@ -8,7 +8,7 @@
 import Foundation
 
 extension Int {
-    var month: String {
+    var nameOfMonth: String {
         switch self {
         case 1:
             return "January"

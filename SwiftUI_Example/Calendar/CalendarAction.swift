@@ -13,4 +13,5 @@ enum CalendarAction: Equatable {
   case setCurrentDay(Int)
   case setItemSize(CGFloat)
   case setDate(Result<Date, Never>)
+  case resetCalendar
 }

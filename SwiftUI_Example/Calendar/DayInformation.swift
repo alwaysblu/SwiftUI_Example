@@ -8,6 +8,7 @@
 import Foundation
 
 struct DayInformation: Hashable {
+//  let id = UUID()
   var day: Int
   var heartCount: Int
   var isOrderDay: Bool
