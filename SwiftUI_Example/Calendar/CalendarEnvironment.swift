@@ -1,14 +1,14 @@
 //
 //  CalendarEnvironment.swift
-//  SwiftUI_Example
+//  Foodiverse
 //
-//  Created by 맥북 on 2022/06/20.
+//  Copyright © 2022 Togi Inc. All rights reserved.
 //
 
 import Combine
+//import FCommon
 import SwiftUI
 
-struct CalendarEnvironment {
-    let dimView = CalendarDimView.shared
-    let scheduler = DispatchQueue.main
+public struct CalendarEnvironment {
+  let schedulers = DispatchQueue.main
 }

@@ -1,16 +1,16 @@
 //
 //  CalendarView.swift
-//  SwiftUI_Example
+//  Foodiverse
 //
-//  Created by 맥북 on 2022/06/20.
+//  Copyright © 2022 Togi Inc. All rights reserved.
 //
 
 import ComposableArchitecture
+//import FCommon
 import SwiftUI
 
 // MARK: View
-
-struct CalendarView: View {
+public struct CalendarView: View {
 
   @ObservedObject
   private var viewStore: CalendarViewStore
@@ -18,8 +18,7 @@ struct CalendarView: View {
   private let store: CalendarStore
   private let dayColumns: [GridItem]
 
-
-  init(store: CalendarStore) {
+  public init(store: CalendarStore) {
     self.viewStore = ViewStore(store)
     self.store = store
     self.dayColumns = [GridItem](
@@ -28,7 +27,11 @@ struct CalendarView: View {
     )
   }
 
-  var body: some View {
+  private var datePicker: some View {
+    return DatePickerView(date: viewStore.binding(\.$date))
+  }
+
+  public var body: some View {
     VStack {
       datePickerButton
       dayOfWeekGrid
@@ -43,6 +46,21 @@ struct CalendarView: View {
     .padding(.horizontal, 15)
     .padding(.vertical, 20)
     .background(.white)
+    .fullScreenCover(
+      isPresented: viewStore.binding(\.$isActive),
+      onDismiss: {
+        viewStore.send(.setDate)
+      }
+    ) {
+      GeometryReader { geo in
+        ModalDimView(
+          modal: datePicker,
+          align: .bottom,
+          size: CGSize(width: geo.size.width, height: 250),
+          isSelected: viewStore.binding(\.$isActive)
+        )
+      }
+    }
   }
 
   private var datePickerButton: some View {
@@ -50,12 +68,16 @@ struct CalendarView: View {
       Button {
         viewStore.send(.showDatePickerView)
       } label: {
-        HStack() {
+        HStack {
           Text(String(describing: viewStore.year) + " " + viewStore.month.nameOfMonth)
             .foregroundColor(.gray)
+            .font(.headline)
           Image("arrow")
+          //            .font(.FHeadline2Bold)
+          //          Image("arrow", bundle: .common)
         }
       }
+      .shadow(color: .black.opacity(0.25), radius: 4, x: 0, y: 2)
       Spacer()
     }
   }
@@ -66,7 +88,10 @@ struct CalendarView: View {
     ) {
       ForEach(DayOfWeek.allCases, id: \.self) { dayOfWeek in
         Text(dayOfWeek.description)
-          .font(.body)
+          .font(.caption2)
+          .foregroundColor(.gray)
+        //          .font(.FCaption1Semibold)
+        //          .foregroundColor(.grey700)
       }
     }
     .padding(.horizontal, 5)
@@ -84,39 +109,48 @@ struct CalendarView: View {
     }.padding(.horizontal, 5)
   }
 
-  private func makeDayView(_ data: DayInformation) -> some View {
-    print("viewStore.currentDay == data.day :", viewStore.currentDay == data.day)
-    print("viewStore.currentDay :", viewStore.currentDay)
-    print("data.day :", data.day)
-   return VStack(spacing: 6) {
+  private func makeDayView(_ data: CalendarDay) -> some View {
+    VStack(spacing: 6) {
       ZStack {
         if viewStore.currentDay == data.day {
           Circle()
             .scale(2)
-            .fill(.blue)
+            .fill(Color.blue)
+          //            .fill(Color.blue500)
         }
         HStack {
           if data.isOrderDay {
             Image("cart")
+            //            Image("cart", bundle: .common)
           }
           Spacer()
         }
         if data.day > 0 {
-          let color = viewStore.currentDay == data.day
+          let cardProgressColor = data.cardProgress
+          ? Color.black
+          : Color.gray
+          //          ? Color.grey700
+          //          : Color.grey400
+          let dayColor = viewStore.currentDay == data.day
           ? Color(.white)
-          : Color(.black)
+          : cardProgressColor
           Text(String(format: "%02d", data.day))
-            .foregroundColor(color)
-            .font(.subheadline)
+            .foregroundColor(dayColor)
+            .font(.caption2)
+          //            .font(.FCaption1Semibold)
         }
       }
       if data.isHeartExist {
         HStack(spacing: 2) {
+          //          Image("heart", bundle: .common)
           Image("heart")
             .resizable()
             .frame(width: 10, height: 10, alignment: .center)
           Text("\(data.heartCount)")
+            .foregroundColor(.gray)
             .font(.caption2)
+          //            .foregroundColor(.grey500)
+          //            .font(.FCaption2Regular)
         }
         .frame(
           width: 25,
@@ -126,28 +160,27 @@ struct CalendarView: View {
       } else {
         Spacer(minLength: 12)
       }
-    }.onTapGesture {
+    }
+    .onTapGesture {
       viewStore.send(.setCurrentDay(data.day))
-    }.frame(width: 40)
+    }
+    .frame(width: 40)
   }
 }
 
 // MARK: Store
-
-typealias CalendarStore = Store<
+public typealias CalendarStore = Store<
   CalendarState,
   CalendarAction
 >
 
 // MARK: ViewStore
-
 typealias CalendarViewStore = ViewStore<
   CalendarState,
   CalendarAction
 >
 
 // MARK: Preview
-
 struct CalendarView_Previews: PreviewProvider {
 
   static var previews: some View {
@@ -164,3 +197,4 @@ struct CalendarView_Previews: PreviewProvider {
     environment: .init()
   )
 }
+

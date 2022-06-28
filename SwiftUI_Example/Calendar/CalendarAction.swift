@@ -1,17 +1,18 @@
 //
 //  CalendarAction.swift
-//  SwiftUI_Example
+//  Foodiverse
 //
-//  Created by 맥북 on 2022/06/20.
+//  Copyright © 2022 Togi Inc. All rights reserved.
 //
 
-import CoreGraphics
 import ComposableArchitecture
+import CoreGraphics
 
-enum CalendarAction: Equatable {
+public enum CalendarAction: Equatable, BindableAction {
   case showDatePickerView
   case setCurrentDay(Int)
   case setItemSize(CGFloat)
-  case setDate(Result<Date, Never>)
   case resetCalendar
+  case binding(BindingAction<CalendarState>)
+  case setDate
 }

@@ -1,23 +1,24 @@
 //
 //  CalendarReducer.swift
-//  SwiftUI_Example
+//  Foodiverse
 //
-//  Created by 맥북 on 2022/06/20.
+//  Copyright © 2022 Togi Inc. All rights reserved.
 //
 
 import ComposableArchitecture
 import CoreGraphics
+//import FCommon
 import SwiftUI
-import UIKit
 
-typealias CalendarReducer = Reducer<
+public typealias CalendarReducer = Reducer<
   CalendarState,
   CalendarAction,
   CalendarEnvironment
 >
 
 extension CalendarReducer {
-  init() {
+  // swiftlint:disable function_body_length
+  public init() {
     self = Self
       .combine(
         .init { state, action, environment in
@@ -28,11 +29,8 @@ extension CalendarReducer {
             return .none
 
           case .showDatePickerView:
-            return environment
-              .dimView
-              .showDimView()
-              .receive(on: environment.scheduler)
-              .catchToEffect(CalendarAction.setDate)
+            state.isActive = true
+            return .none
 
           case .setCurrentDay(let currentDay):
             if state.currentDay != currentDay {
@@ -43,13 +41,14 @@ extension CalendarReducer {
             state.currentDay = nil
 
             return .none
-          case .setDate(.success(let date)):
+
+          case .setDate:
             let dateFormatter = DateFormatter()
 
             dateFormatter.dateFormat = "yyyy"
-            state.year = Int(dateFormatter.string(from: date)) ?? 1
+            state.year = Int(dateFormatter.string(from: state.date)) ?? 1
             dateFormatter.dateFormat = "M"
-            state.month = Int(dateFormatter.string(from: date)) ?? 1
+            state.month = Int(dateFormatter.string(from: state.date)) ?? 1
 
             return .init(value: CalendarAction.resetCalendar)
 
@@ -68,13 +67,14 @@ extension CalendarReducer {
             state.totalGrid = Array(1...numDays)
               .map {
                 let heartCount = Int.random(in: 0...2)
-                return DayInformation(
+                return CalendarDay(
                   day: $0,
                   heartCount: Int.random(in: 0...2),
                   isOrderDay: Bool.random(),
                   isHeartExist: heartCount == 0
                   ? false
-                  : true
+                  : true,
+                  cardProgress: Bool.random()
                 )
               }
 
@@ -86,19 +86,27 @@ extension CalendarReducer {
               state
                 .totalGrid
                 .insert(
-                  DayInformation(
+                  CalendarDay(
                     day: 0,
                     heartCount: 0,
                     isOrderDay: false,
-                    isHeartExist: false
+                    isHeartExist: false,
+                    cardProgress: Bool.random()
                   ),
                   at: 0
                 )
             }
+            return .none
+            
+          case .binding(\.$isActive):
+            state.isActive = false
+            return .none
 
+          case .binding:
             return .none
           }
         }
       )
+      .binding()
   }
 }

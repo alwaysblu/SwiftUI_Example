@@ -1,13 +1,13 @@
 //
-//  DayOfWeek.swift
-//  SwiftUI_Example
+//  File.swift
+//  Foodiverse
 //
-//  Created by 맥북 on 2022/06/20.
+//  Copyright © 2022 Togi Inc. All rights reserved.
 //
 
 import Foundation
 
-enum DayOfWeek: CaseIterable, CustomStringConvertible {
+public enum DayOfWeek: CaseIterable, CustomStringConvertible {
   case sunday
   case monday
   case tuesday
@@ -18,7 +18,7 @@ enum DayOfWeek: CaseIterable, CustomStringConvertible {
 }
 
 extension DayOfWeek {
-  var description: String {
+  public var description: String {
     switch self {
     case .sunday:
       return "일"

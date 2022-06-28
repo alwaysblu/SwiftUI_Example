@@ -1,34 +1,44 @@
 //
 //  CalendarState.swift
-//  SwiftUI_Example
+//  Foodiverse
 //
-//  Created by 맥북 on 2022/06/20.
+//  Copyright © 2022 Togi Inc. All rights reserved.
 //
 
 import ComposableArchitecture
 import CoreGraphics
+//import FCommon
 
-struct CalendarState: Equatable {
+public struct CalendarState: Equatable {
   var year: Int
   var month: Int
-  var totalGrid: [DayInformation]
+  var totalGrid: [CalendarDay]
   var currentDay: Int?
   var itemSize: CGSize = .zero
   var isDatePickerShowUp: Bool
+  @BindableState var isActive: Bool
+  @BindableState var date = Date()
 
-  init(
+  public init(
     year: Int = Calendar.current.component(.year, from: Date()),
     month: Int = Calendar.current.component(.month, from: Date()),
-    totalGrid: [DayInformation] = [],
+    totalGrid: [CalendarDay] = [],
     currentDay: Int? = nil,
     itemSize: CGSize = .zero,
-    isDatePickerShowUp: Bool = false
+    isDatePickerShowUp: Bool = false,
+    isActive: Bool = false
   ) {
     let weekday = Calendar.current.component(.weekday, from: Date()) - 1
     let dateComponents = DateComponents(year: year, month: month)
     var numDays = 0
-    if let date = Calendar.current.date(from: dateComponents),
-       let range = Calendar.current.range(of: .day, in: .month, for: date) {
+    if let date = Calendar.current.date(
+      from: dateComponents
+    ),
+      let range = Calendar.current.range(
+        of: .day,
+        in: .month,
+        for: date
+      ) {
       numDays = range.count
     }
 
@@ -37,24 +47,26 @@ struct CalendarState: Equatable {
     self.totalGrid = Array(1...numDays)
       .map {
         let heartCount = Int.random(in: 0...2)
-        return DayInformation(
+        return CalendarDay(
           day: $0,
           heartCount: Int.random(in: 0...2),
           isOrderDay: Bool.random(),
           isHeartExist: heartCount == 0
           ? false
-          : true
+          : true,
+          cardProgress: Bool.random()
         )
       }
     if weekday != 0 {
       for _ in 1...weekday {
         self.totalGrid
           .insert(
-            DayInformation(
+            CalendarDay(
               day: 0,
               heartCount: 0,
               isOrderDay: false,
-              isHeartExist: false
+              isHeartExist: false,
+              cardProgress: Bool.random()
             ),
             at: 0
           )
@@ -64,5 +76,6 @@ struct CalendarState: Equatable {
     self.currentDay = currentDay
     self.itemSize = itemSize
     self.isDatePickerShowUp = isDatePickerShowUp
+    self.isActive = isActive
   }
 }

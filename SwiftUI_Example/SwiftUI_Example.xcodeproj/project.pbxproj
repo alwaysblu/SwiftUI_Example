@@ -23,6 +23,10 @@
 		259DF0A2286013E5001D7F90 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A1286013E5001D7F90 /* DayOfWeek.swift */; };
 		259DF0A4286027CE001D7F90 /* DayInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A3286027CE001D7F90 /* DayInformation.swift */; };
 		259DF0A62860C1A5001D7F90 /* CalendarDimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */; };
+		25D12AA3286AA79A00DECBED /* ClearBackgroundViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D12AA2286AA79A00DECBED /* ClearBackgroundViewModifier.swift */; };
+		25D12AA5286AA7B100DECBED /* ModalDimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D12AA4286AA7B100DECBED /* ModalDimView.swift */; };
+		25D12AA7286AA7C500DECBED /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D12AA6286AA7C500DECBED /* Extension.swift */; };
+		25D12AAB286ACF1200DECBED /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D12AAA286ACF1200DECBED /* DatePickerView.swift */; };
 		8AF4182E2860E71300BD95E7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF4182D2860E71300BD95E7 /* ComposableArchitecture */; };
 		8AF4183028610E4B00BD95E7 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4182F28610E4B00BD95E7 /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +67,10 @@
 		259DF0A1286013E5001D7F90 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
 		259DF0A3286027CE001D7F90 /* DayInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformation.swift; sourceTree = "<group>"; };
 		259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDimView.swift; sourceTree = "<group>"; };
+		25D12AA2286AA79A00DECBED /* ClearBackgroundViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundViewModifier.swift; sourceTree = "<group>"; };
+		25D12AA4286AA7B100DECBED /* ModalDimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDimView.swift; sourceTree = "<group>"; };
+		25D12AA6286AA7C500DECBED /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		25D12AAA286ACF1200DECBED /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		8AF4182F28610E4B00BD95E7 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +104,7 @@
 		259DF059285B2281001D7F90 = {
 			isa = PBXGroup;
 			children = (
+				25D12AA1286AA78700DECBED /* DimView */,
 				259DF0A028600ADA001D7F90 /* Calendar */,
 				259DF064285B2281001D7F90 /* SwiftUI_Example */,
 				259DF075285B2281001D7F90 /* SwiftUI_ExampleTests */,
@@ -162,8 +171,19 @@
 				259DF0A3286027CE001D7F90 /* DayInformation.swift */,
 				259DF0A52860C1A5001D7F90 /* CalendarDimView.swift */,
 				8AF4182F28610E4B00BD95E7 /* Int+Extension.swift */,
+				25D12AAA286ACF1200DECBED /* DatePickerView.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		25D12AA1286AA78700DECBED /* DimView */ = {
+			isa = PBXGroup;
+			children = (
+				25D12AA2286AA79A00DECBED /* ClearBackgroundViewModifier.swift */,
+				25D12AA4286AA7B100DECBED /* ModalDimView.swift */,
+				25D12AA6286AA7C500DECBED /* Extension.swift */,
+			);
+			path = DimView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,11 +330,15 @@
 				259DF09D28600AD6001D7F90 /* CalendarEnvironment.swift in Sources */,
 				259DF068285B2281001D7F90 /* ContentView.swift in Sources */,
 				8AF4183028610E4B00BD95E7 /* Int+Extension.swift in Sources */,
+				25D12AAB286ACF1200DECBED /* DatePickerView.swift in Sources */,
 				259DF09F28600AD6001D7F90 /* CalendarState.swift in Sources */,
 				259DF09C28600AD6001D7F90 /* CalendarView.swift in Sources */,
 				259DF09E28600AD6001D7F90 /* CalendarReducer.swift in Sources */,
+				25D12AA7286AA7C500DECBED /* Extension.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
 				259DF0A62860C1A5001D7F90 /* CalendarDimView.swift in Sources */,
+				25D12AA3286AA79A00DECBED /* ClearBackgroundViewModifier.swift in Sources */,
+				25D12AA5286AA7B100DECBED /* ModalDimView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
