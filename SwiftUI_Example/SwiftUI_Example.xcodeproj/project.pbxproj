@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		256A5A092873E1CB00428616 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A5A082873E1CB00428616 /* WebView.swift */; };
 		259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF065285B2281001D7F90 /* SwiftUI_ExampleApp.swift */; };
 		259DF068285B2281001D7F90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF067285B2281001D7F90 /* ContentView.swift */; };
 		259DF06A285B2281001D7F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259DF069285B2281001D7F90 /* Assets.xcassets */; };
@@ -15,6 +16,12 @@
 		259DF081285B2281001D7F90 /* SwiftUI_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF080285B2281001D7F90 /* SwiftUI_ExampleUITests.swift */; };
 		259DF083285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */; };
 		259DF095285B282C001D7F90 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 259DF094285B282C001D7F90 /* ComposableArchitecture */; };
+		25C3EBE3287595B7000A1B93 /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE2287595B7000A1B93 /* Next.swift */; };
+		25C3EBE92875A74E000A1B93 /* CartAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE42875A74E000A1B93 /* CartAction.swift */; };
+		25C3EBEA2875A74E000A1B93 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE52875A74E000A1B93 /* CartView.swift */; };
+		25C3EBEB2875A74E000A1B93 /* CartEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE62875A74E000A1B93 /* CartEnvironment.swift */; };
+		25C3EBEC2875A74E000A1B93 /* CartReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE72875A74E000A1B93 /* CartReducer.swift */; };
+		25C3EBED2875A74E000A1B93 /* CartState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE82875A74E000A1B93 /* CartState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		256A5A082873E1CB00428616 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		259DF062285B2281001D7F90 /* SwiftUI_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259DF065285B2281001D7F90 /* SwiftUI_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleApp.swift; sourceTree = "<group>"; };
 		259DF067285B2281001D7F90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +53,12 @@
 		259DF07C285B2281001D7F90 /* SwiftUI_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		259DF080285B2281001D7F90 /* SwiftUI_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleUITests.swift; sourceTree = "<group>"; };
 		259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		25C3EBE2287595B7000A1B93 /* Next.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
+		25C3EBE42875A74E000A1B93 /* CartAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAction.swift; sourceTree = "<group>"; };
+		25C3EBE52875A74E000A1B93 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		25C3EBE62875A74E000A1B93 /* CartEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEnvironment.swift; sourceTree = "<group>"; };
+		25C3EBE72875A74E000A1B93 /* CartReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartReducer.swift; sourceTree = "<group>"; };
+		25C3EBE82875A74E000A1B93 /* CartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +112,15 @@
 			children = (
 				259DF065285B2281001D7F90 /* SwiftUI_ExampleApp.swift */,
 				259DF067285B2281001D7F90 /* ContentView.swift */,
+				256A5A082873E1CB00428616 /* WebView.swift */,
 				259DF069285B2281001D7F90 /* Assets.xcassets */,
 				259DF06B285B2281001D7F90 /* Preview Content */,
+				25C3EBE2287595B7000A1B93 /* Next.swift */,
+				25C3EBE42875A74E000A1B93 /* CartAction.swift */,
+				25C3EBE52875A74E000A1B93 /* CartView.swift */,
+				25C3EBE62875A74E000A1B93 /* CartEnvironment.swift */,
+				25C3EBE72875A74E000A1B93 /* CartReducer.swift */,
+				25C3EBE82875A74E000A1B93 /* CartState.swift */,
 			);
 			path = SwiftUI_Example;
 			sourceTree = "<group>";
@@ -265,7 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C3EBEC2875A74E000A1B93 /* CartReducer.swift in Sources */,
+				25C3EBEA2875A74E000A1B93 /* CartView.swift in Sources */,
+				25C3EBED2875A74E000A1B93 /* CartState.swift in Sources */,
+				25C3EBE3287595B7000A1B93 /* Next.swift in Sources */,
 				259DF068285B2281001D7F90 /* ContentView.swift in Sources */,
+				25C3EBEB2875A74E000A1B93 /* CartEnvironment.swift in Sources */,
+				25C3EBE92875A74E000A1B93 /* CartAction.swift in Sources */,
+				256A5A092873E1CB00428616 /* WebView.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

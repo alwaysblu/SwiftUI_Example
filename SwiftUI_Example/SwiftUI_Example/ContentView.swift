@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+  @ViewBuilder
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+      NavigationView {
+        NavigationLink(
+          destination:
+            CartView(store: CartStore(initialState: CartState(flag: false), reducer: .init(), environment: .init()))
+        ) {
+          Text("next")
+        }
+      }
     }
 }
 
