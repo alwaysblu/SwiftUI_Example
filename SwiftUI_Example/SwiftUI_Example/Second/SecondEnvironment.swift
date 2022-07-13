@@ -7,5 +7,5 @@
 
 import Combine
 
-struct CartEnvironment {
+struct SecondEnvironment {
 }

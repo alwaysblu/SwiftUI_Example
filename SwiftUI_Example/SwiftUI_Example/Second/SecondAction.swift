@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-enum CartAction: Equatable, BindableAction {
-  case binding(BindingAction<CartState>)
+enum SecondAction: Equatable, BindableAction {
+  case binding(BindingAction<SecondState>)
   case toggle
 }

@@ -7,8 +7,6 @@
 
 import ComposableArchitecture
 
-struct CartState: Equatable {
-  @BindableState var flag: Bool = false
-  var a: String = ""
-  var b: String = ""
+struct SecondState: Equatable {
+  @BindableState var webViewShowable: Bool = false
 }

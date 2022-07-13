@@ -7,27 +7,28 @@
 
 import ComposableArchitecture
 
-typealias CartReducer = Reducer<
-  CartState,
-  CartAction,
-  CartEnvironment
+typealias SecondReducer = Reducer<
+  SecondState,
+  SecondAction,
+  SecondEnvironment
 >
 
-extension CartReducer {
+extension SecondReducer {
   init() {
     self = Self
       .combine(
         .init { state, action, environment in
           switch action {
           case .toggle :
-            state.flag.toggle()
-            state.a = "ab"
-            state.b = "ab"
+            state.webViewShowable.toggle()
             return .none
+
           case .binding:
             return .none
           }
         }
-      ).binding()
+      )
+      .binding()
+      .debug()
   }
 }

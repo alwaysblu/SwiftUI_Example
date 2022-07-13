@@ -16,12 +16,21 @@
 		259DF081285B2281001D7F90 /* SwiftUI_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF080285B2281001D7F90 /* SwiftUI_ExampleUITests.swift */; };
 		259DF083285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */; };
 		259DF095285B282C001D7F90 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 259DF094285B282C001D7F90 /* ComposableArchitecture */; };
-		25C3EBE3287595B7000A1B93 /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE2287595B7000A1B93 /* Next.swift */; };
-		25C3EBE92875A74E000A1B93 /* CartAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE42875A74E000A1B93 /* CartAction.swift */; };
-		25C3EBEA2875A74E000A1B93 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE52875A74E000A1B93 /* CartView.swift */; };
-		25C3EBEB2875A74E000A1B93 /* CartEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE62875A74E000A1B93 /* CartEnvironment.swift */; };
-		25C3EBEC2875A74E000A1B93 /* CartReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE72875A74E000A1B93 /* CartReducer.swift */; };
-		25C3EBED2875A74E000A1B93 /* CartState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE82875A74E000A1B93 /* CartState.swift */; };
+		25C3EBE92875A74E000A1B93 /* SecondAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE42875A74E000A1B93 /* SecondAction.swift */; };
+		25C3EBEA2875A74E000A1B93 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE52875A74E000A1B93 /* SecondView.swift */; };
+		25C3EBEB2875A74E000A1B93 /* SecondEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE62875A74E000A1B93 /* SecondEnvironment.swift */; };
+		25C3EBEC2875A74E000A1B93 /* SecondReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE72875A74E000A1B93 /* SecondReducer.swift */; };
+		25C3EBED2875A74E000A1B93 /* SecondState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EBE82875A74E000A1B93 /* SecondState.swift */; };
+		25C3EC08287E5CA6000A1B93 /* FirstAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC03287E5CA6000A1B93 /* FirstAction.swift */; };
+		25C3EC09287E5CA6000A1B93 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC04287E5CA6000A1B93 /* FirstView.swift */; };
+		25C3EC0A287E5CA6000A1B93 /* FirstEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC05287E5CA6000A1B93 /* FirstEnvironment.swift */; };
+		25C3EC0B287E5CA6000A1B93 /* FirstReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC06287E5CA6000A1B93 /* FirstReducer.swift */; };
+		25C3EC0C287E5CA6000A1B93 /* FirstState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC07287E5CA6000A1B93 /* FirstState.swift */; };
+		25C3EC13287E61A3000A1B93 /* FirstModalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC0E287E61A3000A1B93 /* FirstModalAction.swift */; };
+		25C3EC14287E61A3000A1B93 /* FirstModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC0F287E61A3000A1B93 /* FirstModalView.swift */; };
+		25C3EC15287E61A3000A1B93 /* FirstModalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC10287E61A3000A1B93 /* FirstModalEnvironment.swift */; };
+		25C3EC16287E61A3000A1B93 /* FirstModalReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC11287E61A3000A1B93 /* FirstModalReducer.swift */; };
+		25C3EC17287E61A3000A1B93 /* FirstModalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC12287E61A3000A1B93 /* FirstModalState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +62,21 @@
 		259DF07C285B2281001D7F90 /* SwiftUI_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		259DF080285B2281001D7F90 /* SwiftUI_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleUITests.swift; sourceTree = "<group>"; };
 		259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		25C3EBE2287595B7000A1B93 /* Next.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
-		25C3EBE42875A74E000A1B93 /* CartAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAction.swift; sourceTree = "<group>"; };
-		25C3EBE52875A74E000A1B93 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		25C3EBE62875A74E000A1B93 /* CartEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEnvironment.swift; sourceTree = "<group>"; };
-		25C3EBE72875A74E000A1B93 /* CartReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartReducer.swift; sourceTree = "<group>"; };
-		25C3EBE82875A74E000A1B93 /* CartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartState.swift; sourceTree = "<group>"; };
+		25C3EBE42875A74E000A1B93 /* SecondAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAction.swift; sourceTree = "<group>"; };
+		25C3EBE52875A74E000A1B93 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		25C3EBE62875A74E000A1B93 /* SecondEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEnvironment.swift; sourceTree = "<group>"; };
+		25C3EBE72875A74E000A1B93 /* SecondReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondReducer.swift; sourceTree = "<group>"; };
+		25C3EBE82875A74E000A1B93 /* SecondState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondState.swift; sourceTree = "<group>"; };
+		25C3EC03287E5CA6000A1B93 /* FirstAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAction.swift; sourceTree = "<group>"; };
+		25C3EC04287E5CA6000A1B93 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		25C3EC05287E5CA6000A1B93 /* FirstEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstEnvironment.swift; sourceTree = "<group>"; };
+		25C3EC06287E5CA6000A1B93 /* FirstReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstReducer.swift; sourceTree = "<group>"; };
+		25C3EC07287E5CA6000A1B93 /* FirstState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstState.swift; sourceTree = "<group>"; };
+		25C3EC0E287E61A3000A1B93 /* FirstModalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalAction.swift; sourceTree = "<group>"; };
+		25C3EC0F287E61A3000A1B93 /* FirstModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalView.swift; sourceTree = "<group>"; };
+		25C3EC10287E61A3000A1B93 /* FirstModalEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalEnvironment.swift; sourceTree = "<group>"; };
+		25C3EC11287E61A3000A1B93 /* FirstModalReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalReducer.swift; sourceTree = "<group>"; };
+		25C3EC12287E61A3000A1B93 /* FirstModalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,17 +128,13 @@
 		259DF064285B2281001D7F90 /* SwiftUI_Example */ = {
 			isa = PBXGroup;
 			children = (
+				25C3EC18287E67A4000A1B93 /* Zero */,
+				25C3EC02287E5C96000A1B93 /* First */,
+				25C3EC01287E5C86000A1B93 /* Second */,
 				259DF065285B2281001D7F90 /* SwiftUI_ExampleApp.swift */,
-				259DF067285B2281001D7F90 /* ContentView.swift */,
 				256A5A082873E1CB00428616 /* WebView.swift */,
 				259DF069285B2281001D7F90 /* Assets.xcassets */,
 				259DF06B285B2281001D7F90 /* Preview Content */,
-				25C3EBE2287595B7000A1B93 /* Next.swift */,
-				25C3EBE42875A74E000A1B93 /* CartAction.swift */,
-				25C3EBE52875A74E000A1B93 /* CartView.swift */,
-				25C3EBE62875A74E000A1B93 /* CartEnvironment.swift */,
-				25C3EBE72875A74E000A1B93 /* CartReducer.swift */,
-				25C3EBE82875A74E000A1B93 /* CartState.swift */,
 			);
 			path = SwiftUI_Example;
 			sourceTree = "<group>";
@@ -148,6 +162,51 @@
 				259DF082285B2281001D7F90 /* SwiftUI_ExampleUITestsLaunchTests.swift */,
 			);
 			path = SwiftUI_ExampleUITests;
+			sourceTree = "<group>";
+		};
+		25C3EC01287E5C86000A1B93 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				25C3EBE42875A74E000A1B93 /* SecondAction.swift */,
+				25C3EBE52875A74E000A1B93 /* SecondView.swift */,
+				25C3EBE62875A74E000A1B93 /* SecondEnvironment.swift */,
+				25C3EBE72875A74E000A1B93 /* SecondReducer.swift */,
+				25C3EBE82875A74E000A1B93 /* SecondState.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		25C3EC02287E5C96000A1B93 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				25C3EC0D287E6189000A1B93 /* Modal */,
+				25C3EC03287E5CA6000A1B93 /* FirstAction.swift */,
+				25C3EC04287E5CA6000A1B93 /* FirstView.swift */,
+				25C3EC05287E5CA6000A1B93 /* FirstEnvironment.swift */,
+				25C3EC06287E5CA6000A1B93 /* FirstReducer.swift */,
+				25C3EC07287E5CA6000A1B93 /* FirstState.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		25C3EC0D287E6189000A1B93 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				25C3EC0E287E61A3000A1B93 /* FirstModalAction.swift */,
+				25C3EC0F287E61A3000A1B93 /* FirstModalView.swift */,
+				25C3EC10287E61A3000A1B93 /* FirstModalEnvironment.swift */,
+				25C3EC11287E61A3000A1B93 /* FirstModalReducer.swift */,
+				25C3EC12287E61A3000A1B93 /* FirstModalState.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		25C3EC18287E67A4000A1B93 /* Zero */ = {
+			isa = PBXGroup;
+			children = (
+				259DF067285B2281001D7F90 /* ContentView.swift */,
+			);
+			path = Zero;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,14 +345,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25C3EBEC2875A74E000A1B93 /* CartReducer.swift in Sources */,
-				25C3EBEA2875A74E000A1B93 /* CartView.swift in Sources */,
-				25C3EBED2875A74E000A1B93 /* CartState.swift in Sources */,
-				25C3EBE3287595B7000A1B93 /* Next.swift in Sources */,
+				25C3EC15287E61A3000A1B93 /* FirstModalEnvironment.swift in Sources */,
+				25C3EBEC2875A74E000A1B93 /* SecondReducer.swift in Sources */,
+				25C3EC17287E61A3000A1B93 /* FirstModalState.swift in Sources */,
+				25C3EC09287E5CA6000A1B93 /* FirstView.swift in Sources */,
+				25C3EC0C287E5CA6000A1B93 /* FirstState.swift in Sources */,
+				25C3EC08287E5CA6000A1B93 /* FirstAction.swift in Sources */,
+				25C3EBEA2875A74E000A1B93 /* SecondView.swift in Sources */,
+				25C3EBED2875A74E000A1B93 /* SecondState.swift in Sources */,
+				25C3EC0B287E5CA6000A1B93 /* FirstReducer.swift in Sources */,
 				259DF068285B2281001D7F90 /* ContentView.swift in Sources */,
-				25C3EBEB2875A74E000A1B93 /* CartEnvironment.swift in Sources */,
-				25C3EBE92875A74E000A1B93 /* CartAction.swift in Sources */,
+				25C3EBEB2875A74E000A1B93 /* SecondEnvironment.swift in Sources */,
+				25C3EC14287E61A3000A1B93 /* FirstModalView.swift in Sources */,
+				25C3EBE92875A74E000A1B93 /* SecondAction.swift in Sources */,
+				25C3EC0A287E5CA6000A1B93 /* FirstEnvironment.swift in Sources */,
+				25C3EC16287E61A3000A1B93 /* FirstModalReducer.swift in Sources */,
 				256A5A092873E1CB00428616 /* WebView.swift in Sources */,
+				25C3EC13287E61A3000A1B93 /* FirstModalAction.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

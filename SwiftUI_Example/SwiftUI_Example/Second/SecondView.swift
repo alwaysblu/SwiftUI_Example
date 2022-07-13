@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: View
 
-struct CartView: View {
+struct SecondView: View {
 
   @ObservedObject
   private var viewStore: CartViewStore
@@ -23,49 +23,57 @@ struct CartView: View {
   }
 
   var body: some View {
-    ScrollView {
-      VStack {
-        Button("show", action: {
-          viewStore.send(.toggle)
-        })
-      }
-      .padding()
-    }
-    .fullScreenCover (
-      isPresented: viewStore.binding(\.$flag),
-      content: {
+    ZStack {
+      Color.green
+        .ignoresSafeArea()
+      ScrollView {
         VStack {
-          Text("\(viewStore.a) \(viewStore.b)")
-          cartView
+          Button("webView", action: {
+            viewStore.send(.toggle)
+          })
         }
+        .padding()
       }
-    )
-  }
-
-@ViewBuilder
-var cartView: some View {
-  let webView = WebView(url: "https://cart.coupang.com/cartView.pang",
-                        preferredContentMode: .desktop)
-  webView.onTapGesture {
-    webView.getHTML { (html, error) in
-      print(html)
+      .fullScreenCover (
+        isPresented: viewStore.binding(\.$webViewShowable),
+        content: {
+          VStack {
+            Button("dismiss") {
+              viewStore.send(.toggle)
+            }
+            cartView
+          }
+        }
+      )
     }
   }
-}
+  
+  @ViewBuilder
+  var cartView: some View {
+    let webView = WebView(
+      url: "https://cart.coupang.com/cartView.pang",
+      preferredContentMode: .desktop
+    )
+    webView.onTapGesture {
+      webView.getHTML { (html, error) in
+        print(html)
+      }
+    }
+  }
 }
 
 // MARK: Store
 
 typealias CartStore = Store<
-  CartState,
-  CartAction
+  SecondState,
+  SecondAction
 >
 
 // MARK: ViewStore
 
 typealias CartViewStore = ViewStore<
-  CartState,
-  CartAction
+  SecondState,
+  SecondAction
 >
 
 // MARK: Preview
@@ -74,7 +82,7 @@ struct CartView_Previews: PreviewProvider {
 
   static var previews: some View {
     ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-			CartView(store: store)
+      SecondView(store: store)
         .preferredColorScheme(colorScheme)
         .previewLayout(.sizeThatFits)
     }
