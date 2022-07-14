@@ -121,7 +121,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     print(response.notification.request.content.userInfo)
     let view = response.notification.request.content.userInfo["target_view"] as! String
     if view == "brown_view" {
-      viewStore?.send(.toggle)
       completionHandler()
     }
   }

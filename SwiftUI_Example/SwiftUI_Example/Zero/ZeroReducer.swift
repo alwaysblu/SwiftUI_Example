@@ -27,9 +27,6 @@ extension ZeroReducer {
           ),
         .init { state, action, environment in
           switch action {
-          case .toggle:
-            state.routing.toggle()
-            return .none
           case .firstAction(_):
             return .none
           }

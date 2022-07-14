@@ -38,6 +38,10 @@
 		25C3EC24287E71B2000A1B93 /* ZeroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC1F287E71B2000A1B93 /* ZeroState.swift */; };
 		25C3EC29287EB433000A1B93 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 25C3EC28287EB433000A1B93 /* FirebaseMessaging */; };
 		25C3EC2F287EC123000A1B93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25C3EC2E287EC123000A1B93 /* GoogleService-Info.plist */; };
+		25C3EC4628800DF9000A1B93 /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC4528800DF9000A1B93 /* NavigationStack.swift */; };
+		25C3EC4828800E11000A1B93 /* NavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC4728800E11000A1B93 /* NavigationStackView.swift */; };
+		25C3EC4A28800E23000A1B93 /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC4928800E23000A1B93 /* Pop.swift */; };
+		25C3EC4C28800E36000A1B93 /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC4B28800E36000A1B93 /* Push.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,10 @@
 		25C3EC2A287EB473000A1B93 /* SwiftUI_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_Example.entitlements; sourceTree = "<group>"; };
 		25C3EC2E287EC123000A1B93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		25C3EC30287EC70C000A1B93 /* SwiftUI-Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-Example-Info.plist"; sourceTree = SOURCE_ROOT; };
+		25C3EC4528800DF9000A1B93 /* NavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
+		25C3EC4728800E11000A1B93 /* NavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackView.swift; sourceTree = "<group>"; };
+		25C3EC4928800E23000A1B93 /* Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pop.swift; sourceTree = "<group>"; };
+		25C3EC4B28800E36000A1B93 /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,7 @@
 		259DF064285B2281001D7F90 /* SwiftUI_Example */ = {
 			isa = PBXGroup;
 			children = (
+				25C3EC4428800DDE000A1B93 /* NavigationStack */,
 				25C3EC30287EC70C000A1B93 /* SwiftUI-Example-Info.plist */,
 				25C3EC2A287EB473000A1B93 /* SwiftUI_Example.entitlements */,
 				25C3EC18287E67A4000A1B93 /* Zero */,
@@ -231,6 +240,17 @@
 				25C3EC1F287E71B2000A1B93 /* ZeroState.swift */,
 			);
 			path = Zero;
+			sourceTree = "<group>";
+		};
+		25C3EC4428800DDE000A1B93 /* NavigationStack */ = {
+			isa = PBXGroup;
+			children = (
+				25C3EC4528800DF9000A1B93 /* NavigationStack.swift */,
+				25C3EC4728800E11000A1B93 /* NavigationStackView.swift */,
+				25C3EC4928800E23000A1B93 /* Pop.swift */,
+				25C3EC4B28800E36000A1B93 /* Push.swift */,
+			);
+			path = NavigationStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +395,8 @@
 				25C3EC15287E61A3000A1B93 /* FirstModalEnvironment.swift in Sources */,
 				25C3EC20287E71B2000A1B93 /* ZeroAction.swift in Sources */,
 				25C3EBEC2875A74E000A1B93 /* SecondReducer.swift in Sources */,
+				25C3EC4A28800E23000A1B93 /* Pop.swift in Sources */,
+				25C3EC4C28800E36000A1B93 /* Push.swift in Sources */,
 				25C3EC1A287E6CC2000A1B93 /* AppDelegate.swift in Sources */,
 				25C3EC17287E61A3000A1B93 /* FirstModalState.swift in Sources */,
 				25C3EC23287E71B2000A1B93 /* ZeroReducer.swift in Sources */,
@@ -394,6 +416,8 @@
 				256A5A092873E1CB00428616 /* WebView.swift in Sources */,
 				25C3EC22287E71B2000A1B93 /* ZeroEnvironment.swift in Sources */,
 				25C3EC13287E61A3000A1B93 /* FirstModalAction.swift in Sources */,
+				25C3EC4628800DF9000A1B93 /* NavigationStack.swift in Sources */,
+				25C3EC4828800E11000A1B93 /* NavigationStackView.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

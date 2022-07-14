@@ -24,22 +24,26 @@ struct ZeroView: View {
 
   var body: some View {
     NavigationView {
-      ZStack {
-        Color.red
-          .ignoresSafeArea()
-        NavigationLink(
-          destination:
-            FirstView(
-              store:
-                  .init(
-                    initialState: FirstState(),
-                    reducer: .init(),
-                    environment: FirstEnvironment()
-                  )
-            )
-        ) {
-          Text("next")
-        }
+      contentView
+    }
+  }
+
+  var contentView: some View {
+    ZStack {
+      Color.red
+        .ignoresSafeArea()
+      NavigationLink(
+        destination:
+          FirstView(
+            store:
+                .init(
+                  initialState: FirstState(),
+                  reducer: .init(),
+                  environment: FirstEnvironment()
+                )
+          )
+      ) {
+        Text("next")
       }
     }
   }

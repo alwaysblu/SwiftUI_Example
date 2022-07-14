@@ -9,7 +9,6 @@ import ComposableArchitecture
 
 struct ZeroState: Equatable {
   var first: FirstState
-  var routing: Bool = false
 
   init(
     first: FirstState = .init()
