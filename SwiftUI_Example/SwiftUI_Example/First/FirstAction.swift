@@ -12,4 +12,5 @@ enum FirstAction: Equatable, BindableAction {
   case modalAction(FirstModalAction)
   case binding(BindingAction<FirstState>)
   case toggle
+  case onAppear
 }

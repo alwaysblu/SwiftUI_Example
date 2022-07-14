@@ -61,6 +61,8 @@ struct FirstView: View {
           }
         }
       )
+    }.onAppear {
+      viewStore.send(.onAppear)
     }
   }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		256A5A092873E1CB00428616 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A5A082873E1CB00428616 /* WebView.swift */; };
 		259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF065285B2281001D7F90 /* SwiftUI_ExampleApp.swift */; };
-		259DF068285B2281001D7F90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF067285B2281001D7F90 /* ContentView.swift */; };
 		259DF06A285B2281001D7F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259DF069285B2281001D7F90 /* Assets.xcassets */; };
 		259DF06D285B2281001D7F90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259DF06C285B2281001D7F90 /* Preview Assets.xcassets */; };
 		259DF077285B2281001D7F90 /* SwiftUI_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259DF076285B2281001D7F90 /* SwiftUI_ExampleTests.swift */; };
@@ -31,6 +30,14 @@
 		25C3EC15287E61A3000A1B93 /* FirstModalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC10287E61A3000A1B93 /* FirstModalEnvironment.swift */; };
 		25C3EC16287E61A3000A1B93 /* FirstModalReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC11287E61A3000A1B93 /* FirstModalReducer.swift */; };
 		25C3EC17287E61A3000A1B93 /* FirstModalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC12287E61A3000A1B93 /* FirstModalState.swift */; };
+		25C3EC1A287E6CC2000A1B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC19287E6CC2000A1B93 /* AppDelegate.swift */; };
+		25C3EC20287E71B2000A1B93 /* ZeroAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC1B287E71B2000A1B93 /* ZeroAction.swift */; };
+		25C3EC21287E71B2000A1B93 /* ZeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC1C287E71B2000A1B93 /* ZeroView.swift */; };
+		25C3EC22287E71B2000A1B93 /* ZeroEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC1D287E71B2000A1B93 /* ZeroEnvironment.swift */; };
+		25C3EC23287E71B2000A1B93 /* ZeroReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC1E287E71B2000A1B93 /* ZeroReducer.swift */; };
+		25C3EC24287E71B2000A1B93 /* ZeroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC1F287E71B2000A1B93 /* ZeroState.swift */; };
+		25C3EC29287EB433000A1B93 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 25C3EC28287EB433000A1B93 /* FirebaseMessaging */; };
+		25C3EC2F287EC123000A1B93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25C3EC2E287EC123000A1B93 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +61,6 @@
 		256A5A082873E1CB00428616 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		259DF062285B2281001D7F90 /* SwiftUI_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259DF065285B2281001D7F90 /* SwiftUI_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_ExampleApp.swift; sourceTree = "<group>"; };
-		259DF067285B2281001D7F90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		259DF069285B2281001D7F90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		259DF06C285B2281001D7F90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		259DF072285B2281001D7F90 /* SwiftUI_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,15 @@
 		25C3EC10287E61A3000A1B93 /* FirstModalEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalEnvironment.swift; sourceTree = "<group>"; };
 		25C3EC11287E61A3000A1B93 /* FirstModalReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalReducer.swift; sourceTree = "<group>"; };
 		25C3EC12287E61A3000A1B93 /* FirstModalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModalState.swift; sourceTree = "<group>"; };
+		25C3EC19287E6CC2000A1B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25C3EC1B287E71B2000A1B93 /* ZeroAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroAction.swift; sourceTree = "<group>"; };
+		25C3EC1C287E71B2000A1B93 /* ZeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroView.swift; sourceTree = "<group>"; };
+		25C3EC1D287E71B2000A1B93 /* ZeroEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroEnvironment.swift; sourceTree = "<group>"; };
+		25C3EC1E287E71B2000A1B93 /* ZeroReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroReducer.swift; sourceTree = "<group>"; };
+		25C3EC1F287E71B2000A1B93 /* ZeroState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroState.swift; sourceTree = "<group>"; };
+		25C3EC2A287EB473000A1B93 /* SwiftUI_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_Example.entitlements; sourceTree = "<group>"; };
+		25C3EC2E287EC123000A1B93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		25C3EC30287EC70C000A1B93 /* SwiftUI-Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-Example-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C3EC29287EB433000A1B93 /* FirebaseMessaging in Frameworks */,
 				259DF095285B282C001D7F90 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +144,8 @@
 		259DF064285B2281001D7F90 /* SwiftUI_Example */ = {
 			isa = PBXGroup;
 			children = (
+				25C3EC30287EC70C000A1B93 /* SwiftUI-Example-Info.plist */,
+				25C3EC2A287EB473000A1B93 /* SwiftUI_Example.entitlements */,
 				25C3EC18287E67A4000A1B93 /* Zero */,
 				25C3EC02287E5C96000A1B93 /* First */,
 				25C3EC01287E5C86000A1B93 /* Second */,
@@ -135,6 +153,8 @@
 				256A5A082873E1CB00428616 /* WebView.swift */,
 				259DF069285B2281001D7F90 /* Assets.xcassets */,
 				259DF06B285B2281001D7F90 /* Preview Content */,
+				25C3EC19287E6CC2000A1B93 /* AppDelegate.swift */,
+				25C3EC2E287EC123000A1B93 /* GoogleService-Info.plist */,
 			);
 			path = SwiftUI_Example;
 			sourceTree = "<group>";
@@ -204,7 +224,11 @@
 		25C3EC18287E67A4000A1B93 /* Zero */ = {
 			isa = PBXGroup;
 			children = (
-				259DF067285B2281001D7F90 /* ContentView.swift */,
+				25C3EC1B287E71B2000A1B93 /* ZeroAction.swift */,
+				25C3EC1C287E71B2000A1B93 /* ZeroView.swift */,
+				25C3EC1D287E71B2000A1B93 /* ZeroEnvironment.swift */,
+				25C3EC1E287E71B2000A1B93 /* ZeroReducer.swift */,
+				25C3EC1F287E71B2000A1B93 /* ZeroState.swift */,
 			);
 			path = Zero;
 			sourceTree = "<group>";
@@ -227,6 +251,7 @@
 			name = SwiftUI_Example;
 			packageProductDependencies = (
 				259DF094285B282C001D7F90 /* ComposableArchitecture */,
+				25C3EC28287EB433000A1B93 /* FirebaseMessaging */,
 			);
 			productName = SwiftUI_Example;
 			productReference = 259DF062285B2281001D7F90 /* SwiftUI_Example.app */;
@@ -302,6 +327,7 @@
 			mainGroup = 259DF059285B2281001D7F90;
 			packageReferences = (
 				259DF093285B282C001D7F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				25C3EC27287EB433000A1B93 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 259DF063285B2281001D7F90 /* Products */;
 			projectDirPath = "";
@@ -321,6 +347,7 @@
 			files = (
 				259DF06D285B2281001D7F90 /* Preview Assets.xcassets in Resources */,
 				259DF06A285B2281001D7F90 /* Assets.xcassets in Resources */,
+				25C3EC2F287EC123000A1B93 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,21 +373,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				25C3EC15287E61A3000A1B93 /* FirstModalEnvironment.swift in Sources */,
+				25C3EC20287E71B2000A1B93 /* ZeroAction.swift in Sources */,
 				25C3EBEC2875A74E000A1B93 /* SecondReducer.swift in Sources */,
+				25C3EC1A287E6CC2000A1B93 /* AppDelegate.swift in Sources */,
 				25C3EC17287E61A3000A1B93 /* FirstModalState.swift in Sources */,
+				25C3EC23287E71B2000A1B93 /* ZeroReducer.swift in Sources */,
 				25C3EC09287E5CA6000A1B93 /* FirstView.swift in Sources */,
 				25C3EC0C287E5CA6000A1B93 /* FirstState.swift in Sources */,
 				25C3EC08287E5CA6000A1B93 /* FirstAction.swift in Sources */,
 				25C3EBEA2875A74E000A1B93 /* SecondView.swift in Sources */,
+				25C3EC21287E71B2000A1B93 /* ZeroView.swift in Sources */,
+				25C3EC24287E71B2000A1B93 /* ZeroState.swift in Sources */,
 				25C3EBED2875A74E000A1B93 /* SecondState.swift in Sources */,
 				25C3EC0B287E5CA6000A1B93 /* FirstReducer.swift in Sources */,
-				259DF068285B2281001D7F90 /* ContentView.swift in Sources */,
 				25C3EBEB2875A74E000A1B93 /* SecondEnvironment.swift in Sources */,
 				25C3EC14287E61A3000A1B93 /* FirstModalView.swift in Sources */,
 				25C3EBE92875A74E000A1B93 /* SecondAction.swift in Sources */,
 				25C3EC0A287E5CA6000A1B93 /* FirstEnvironment.swift in Sources */,
 				25C3EC16287E61A3000A1B93 /* FirstModalReducer.swift in Sources */,
 				256A5A092873E1CB00428616 /* WebView.swift in Sources */,
+				25C3EC22287E71B2000A1B93 /* ZeroEnvironment.swift in Sources */,
 				25C3EC13287E61A3000A1B93 /* FirstModalAction.swift in Sources */,
 				259DF066285B2281001D7F90 /* SwiftUI_ExampleApp.swift in Sources */,
 			);
@@ -518,11 +550,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUI_Example/SwiftUI_Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI_Example/Preview Content\"";
+				DEVELOPMENT_TEAM = WX8CNHALLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-Example-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -546,11 +581,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUI_Example/SwiftUI_Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI_Example/Preview Content\"";
+				DEVELOPMENT_TEAM = WX8CNHALLY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-Example-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -691,6 +729,14 @@
 				minimumVersion = 0.9.0;
 			};
 		};
+		25C3EC27287EB433000A1B93 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -698,6 +744,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 259DF093285B282C001D7F90 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		25C3EC28287EB433000A1B93 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25C3EC27287EB433000A1B93 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

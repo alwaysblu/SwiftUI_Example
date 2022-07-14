@@ -33,6 +33,11 @@ extension FirstReducer {
         ),
         .init { state, action, environment in
           switch action {
+          case .onAppear:
+            state.yellowRequests.forEach { request in
+              state.notificationCenter.add(request, withCompletionHandler: nil)
+            }
+            return .none
           case .secondAction:
             return .none
 

@@ -1,5 +1,5 @@
 //
-//  FirstModalView.swift
+//  ZeroView.swift
 //  SwiftUI_Example
 //
 //  Created by 맥북 on 2022/07/13.
@@ -10,14 +10,14 @@ import SwiftUI
 
 // MARK: View
 
-struct FirstModalView: View {
+struct ZeroView: View {
 
   @ObservedObject
-  private var viewStore: FirstModalViewStore
+  private var viewStore: ZeroViewStore
 
-  private let store: FirstModalStore
+  private let store: ZeroStore
 
-  init(store: FirstModalStore) {
+  init(store: ZeroStore) {
     self.viewStore = ViewStore(store)
     self.store = store
   }
@@ -25,16 +25,17 @@ struct FirstModalView: View {
   var body: some View {
     NavigationView {
       ZStack {
-        Color.brown
+        Color.red
           .ignoresSafeArea()
         NavigationLink(
           destination:
-            SecondView(
+            FirstView(
               store:
-                store.scope(
-                  state: \FirstModalState.second,
-                  action: FirstModalAction.secondAction
-                )
+                  .init(
+                    initialState: FirstState(),
+                    reducer: .init(),
+                    environment: FirstEnvironment()
+                  )
             )
         ) {
           Text("next")
@@ -46,31 +47,31 @@ struct FirstModalView: View {
 
 // MARK: Store
 
-typealias FirstModalStore = Store<
-  FirstModalState,
-  FirstModalAction
+typealias ZeroStore = Store<
+  ZeroState,
+  ZeroAction
 >
 
 // MARK: ViewStore
 
-typealias FirstModalViewStore = ViewStore<
-  FirstModalState,
-  FirstModalAction
+typealias ZeroViewStore = ViewStore<
+  ZeroState,
+  ZeroAction
 >
 
 // MARK: Preview
 
-struct FirstModalView_Previews: PreviewProvider {
+struct ZeroView_Previews: PreviewProvider {
 
   static var previews: some View {
     ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-      FirstModalView(store: store)
+			ZeroView(store: store)
         .preferredColorScheme(colorScheme)
         .previewLayout(.sizeThatFits)
     }
   }
 
-  static let store: FirstModalStore = .init(
+  static let store: ZeroStore = .init(
     initialState: .init(),
     reducer: .init(),
     environment: .init()

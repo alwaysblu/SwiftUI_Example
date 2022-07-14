@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseMessaging
 
 @main
 struct SwiftUI_ExampleApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  
+  var body: some Scene {
+    WindowGroup {
+      if let store = delegate.store {
+        ZeroView(
+          store: store
+        )
+      }
     }
+  }
 }
