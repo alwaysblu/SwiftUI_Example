@@ -42,6 +42,7 @@
 		25C3EC4828800E11000A1B93 /* NavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC4728800E11000A1B93 /* NavigationStackView.swift */; };
 		25C3EC4A28800E23000A1B93 /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC4928800E23000A1B93 /* Pop.swift */; };
 		25C3EC4C28800E36000A1B93 /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC4B28800E36000A1B93 /* Push.swift */; };
+		25C3EC512880212B000A1B93 /* AlwaysEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		25C3EC4728800E11000A1B93 /* NavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackView.swift; sourceTree = "<group>"; };
 		25C3EC4928800E23000A1B93 /* Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pop.swift; sourceTree = "<group>"; };
 		25C3EC4B28800E36000A1B93 /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
+		25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysEquatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				259DF06B285B2281001D7F90 /* Preview Content */,
 				25C3EC19287E6CC2000A1B93 /* AppDelegate.swift */,
 				25C3EC2E287EC123000A1B93 /* GoogleService-Info.plist */,
+				25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */,
 			);
 			path = SwiftUI_Example;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				25C3EC17287E61A3000A1B93 /* FirstModalState.swift in Sources */,
 				25C3EC23287E71B2000A1B93 /* ZeroReducer.swift in Sources */,
 				25C3EC09287E5CA6000A1B93 /* FirstView.swift in Sources */,
+				25C3EC512880212B000A1B93 /* AlwaysEquatable.swift in Sources */,
 				25C3EC0C287E5CA6000A1B93 /* FirstState.swift in Sources */,
 				25C3EC08287E5CA6000A1B93 /* FirstAction.swift in Sources */,
 				25C3EBEA2875A74E000A1B93 /* SecondView.swift in Sources */,

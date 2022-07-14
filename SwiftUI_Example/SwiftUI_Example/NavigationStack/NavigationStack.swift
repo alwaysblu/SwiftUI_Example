@@ -53,10 +53,10 @@ public class NavigationStack: ObservableObject {
     /// - Parameters:
     ///   - element: The destination view.
     ///   - identifier: The ID of the destination view (used to easily come back to it if needed).
-  public func push<Element: View>(views:[(element: Element, identifier: String?)]) {
-    let getIdentifier = { (_ identifier: String?) -> String in
-      return identifier == nil ? UUID().uuidString : identifier!
-    }
+    public func push<Element: View>(views:[(element: Element, identifier: String?)]) {
+        let getIdentifier = { (_ identifier: String?) -> String in
+          return identifier == nil ? UUID().uuidString : identifier!
+        }
         withAnimation(easing) {
             navigationType = .push
             var viewElements: [ViewElement] = []
@@ -111,7 +111,7 @@ private struct ViewStack {
 
     mutating func push(_ elements: [ViewElement]) {
       var viewElements: [ViewElement] = []
-      
+
       for element in elements {
         if printDuplicateLog(id: element.id) {
           viewElements.append(element)
