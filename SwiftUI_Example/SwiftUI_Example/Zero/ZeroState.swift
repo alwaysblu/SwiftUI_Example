@@ -8,7 +8,8 @@
 import ComposableArchitecture
 
 struct ZeroState: Equatable {
-  var first: FirstState
+  @AlwaysEquatable var first: FirstState
+  var flag = true
 
   init(
     first: FirstState = .init()

@@ -47,6 +47,10 @@ extension FirstReducer {
           case .binding:
             return .none
 
+          case .toggleModalShowable:
+            state.modalShowable.toggle()
+            return .none
+
           case .toggle:
             state.flag.toggle()
             return .none

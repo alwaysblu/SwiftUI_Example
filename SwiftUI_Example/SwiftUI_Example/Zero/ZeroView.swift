@@ -30,8 +30,13 @@ struct ZeroView: View {
 
   var contentView: some View {
     ZStack {
-      Color.red
-        .ignoresSafeArea()
+      if viewStore.flag {
+        Color.red
+          .ignoresSafeArea()
+      } else {
+        Color.black
+          .ignoresSafeArea()
+      }
       NavigationLink(
         destination:
           FirstView(
@@ -43,7 +48,12 @@ struct ZeroView: View {
                 )
           )
       ) {
-        Text("next")
+        VStack(spacing: 50) {
+          Button("change color") {
+            viewStore.send(.toggle)
+          }
+          Text("show next view")
+        }
       }
     }
   }
@@ -69,7 +79,7 @@ struct ZeroView_Previews: PreviewProvider {
 
   static var previews: some View {
     ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-			ZeroView(store: store)
+      ZeroView(store: store)
         .preferredColorScheme(colorScheme)
         .previewLayout(.sizeThatFits)
     }

@@ -29,6 +29,9 @@ extension ZeroReducer {
           switch action {
           case .firstAction(_):
             return .none
+          case .toggle:
+            state.flag.toggle()
+            return .none
           }
         }
       )

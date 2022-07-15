@@ -7,4 +7,5 @@
 
 enum ZeroAction: Equatable {
   case firstAction(FirstAction)
+  case toggle
 }

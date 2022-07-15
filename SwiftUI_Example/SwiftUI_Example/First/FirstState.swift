@@ -9,7 +9,8 @@ import ComposableArchitecture
 import SwiftUI
 
 struct FirstState: Equatable {
-  @BindableState var flag = false
+  @BindableState var modalShowable = false
+  var flag = true
   var second: SecondState
   var modal: FirstModalState
   let yellowContent: UNMutableNotificationContent = {

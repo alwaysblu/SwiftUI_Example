@@ -24,9 +24,14 @@ struct FirstView: View {
 
   var body: some View {
     ZStack {
-      Color.purple
-        .ignoresSafeArea()
-      VStack{
+      if viewStore.flag {
+        Color.purple
+          .ignoresSafeArea()
+      } else {
+        Color.black
+          .ignoresSafeArea()
+      }
+      VStack(spacing: 50){
       NavigationLink(
         destination:
           SecondView(
@@ -38,18 +43,21 @@ struct FirstView: View {
               )
           )
       ) {
-        Text("next")
+        Text("move next view")
       }
-        Button("modal") {
+        Button("show modal") {
+          viewStore.send(.toggleModalShowable)
+        }
+        Button("change color") {
           viewStore.send(.toggle)
         }
       }
       .fullScreenCover (
-        isPresented: viewStore.binding(\.$flag),
+        isPresented: viewStore.binding(\.$modalShowable),
         content: {
           VStack {
             Button("dismiss") {
-              viewStore.send(.toggle)
+              viewStore.send(.toggleModalShowable)
             }
             FirstModalView(
               store:
