@@ -38,33 +38,37 @@ struct FirstView: View {
       .fullScreenCover (
         isPresented: viewStore.binding(\.$modalShowable),
         content: {
-          VStack {
-            Button("dismiss") {
-              viewStore.send(.toggleModalShowable(false))
-            }
-            FirstModalView(
-              store:
-                store.scope(
-                  state: \.modal,
-                  action: FirstAction.modalAction
-                )
-            )
-          }
+          modalView
         }
       )
       .onAppear {
         viewStore.send(.onAppear)
       }
       .onDisappear {
-        viewStore.send(.toggleModalShowable(false))
+        viewStore.send(.setModalShowable(false))
       }
+    }
+  }
+
+  var modalView: some View {
+    VStack {
+      Button("dismiss") {
+        viewStore.send(.setModalShowable(false))
+      }
+      ModalView(
+        store:
+          store.scope(
+            state: \.modal,
+            action: FirstAction.modalAction
+          )
+      )
     }
   }
 
   var contentView: some View {
     VStack {
       Button("show modal") {
-        viewStore.send(.toggleModalShowable(true))
+        viewStore.send(.setModalShowable(true))
       }
       Button("show next view") {
         viewStore.send(.setNextShowable(true))

@@ -7,13 +7,13 @@
 
 import ComposableArchitecture
 
-typealias FirstModalReducer = Reducer<
-  FirstModalState,
-  FirstModalAction,
-  FirstModalEnvironment
+typealias ModalReducer = Reducer<
+  ModalState,
+  ModalAction,
+  ModalEnvironment
 >
 
-extension FirstModalReducer {
+extension ModalReducer {
   init() {
     self = Self
       .combine(

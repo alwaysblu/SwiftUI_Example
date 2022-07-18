@@ -5,6 +5,6 @@
 //  Created by 맥북 on 2022/07/13.
 //
 
-enum FirstModalAction: Equatable {
+enum ModalAction: Equatable {
   case secondAction(SecondAction)
 }

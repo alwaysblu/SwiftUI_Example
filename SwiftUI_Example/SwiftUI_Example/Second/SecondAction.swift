@@ -12,4 +12,5 @@ enum SecondAction: Equatable, BindableAction {
   case binding(BindingAction<SecondState>)
   case toggle
   case setNavigationFlag
+  case setModalShowable(Bool)
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: View
 
-struct FirstModalView: View {
+struct ModalView: View {
 
   @ObservedObject
   private var viewStore: FirstModalViewStore
@@ -41,8 +41,8 @@ struct FirstModalView: View {
     SecondView(
       store:
         store.scope(
-          state: \FirstModalState.second,
-          action: FirstModalAction.secondAction
+          state: \ModalState.second,
+          action: ModalAction.secondAction
         )
     )
   }
@@ -51,15 +51,15 @@ struct FirstModalView: View {
 // MARK: Store
 
 typealias FirstModalStore = Store<
-  FirstModalState,
-  FirstModalAction
+  ModalState,
+  ModalAction
 >
 
 // MARK: ViewStore
 
 typealias FirstModalViewStore = ViewStore<
-  FirstModalState,
-  FirstModalAction
+  ModalState,
+  ModalAction
 >
 
 // MARK: Preview
@@ -68,7 +68,7 @@ struct FirstModalView_Previews: PreviewProvider {
 
   static var previews: some View {
     ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-      FirstModalView(store: store)
+      ModalView(store: store)
         .preferredColorScheme(colorScheme)
         .previewLayout(.sizeThatFits)
     }

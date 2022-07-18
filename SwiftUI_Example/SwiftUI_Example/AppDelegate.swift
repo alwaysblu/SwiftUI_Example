@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let store: ZeroStore = .init(
       initialState: .init(),
       reducer: .init(),
-      environment: ZeroEnvironment()
+      environment: RootEnvironment()
     )
     self.store = store
     self.viewStore = .init(store)
@@ -118,7 +118,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void
   ) {
-    viewStore?.send(.popAll(.purple))
+    viewStore?.send(.route(.green))
     print(response.notification.request.content.userInfo)
   }
 }

@@ -26,13 +26,17 @@ extension SecondReducer {
             return .none
 
           case .toggle :
-            state.webViewShowable.toggle()
+            state.modalShowable.toggle()
             return .none
 
           case .setNavigationFlag:
             if state.navigationFlag {
               state.navigationFlag = false
             }
+            return .none
+
+          case .setModalShowable(let modalShowable):
+            state.modalShowable = modalShowable
             return .none
 
           case .binding:

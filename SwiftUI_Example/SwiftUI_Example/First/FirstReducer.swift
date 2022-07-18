@@ -24,11 +24,11 @@ extension FirstReducer {
             SecondEnvironment()
           }
         ),
-        FirstModalReducer().pullback(
+        ModalReducer().pullback(
           state: \FirstState.modal,
           action: /FirstAction.modalAction,
           environment: { _ in
-            FirstModalEnvironment()
+            ModalEnvironment()
           }
         ),
         .init { state, action, environment in
@@ -37,10 +37,7 @@ extension FirstReducer {
             if state.navigationFlag {
               return .init(value: .setNavigationFlag)
             }
-            state.yellowRequests.forEach { request in
-              state.notificationCenter.add(request, withCompletionHandler: nil)
-            }
-            state.nextShowable = false
+            environment.notificationHandler.push()
             return .none
 
           case .secondAction:
@@ -58,7 +55,7 @@ extension FirstReducer {
           case .binding:
             return .none
 
-          case .toggleModalShowable(let modalShowable):
+          case .setModalShowable(let modalShowable):
             state.modalShowable = modalShowable
             return .none
 

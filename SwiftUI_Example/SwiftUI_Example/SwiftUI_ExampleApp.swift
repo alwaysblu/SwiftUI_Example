@@ -16,7 +16,7 @@ struct SwiftUI_ExampleApp: App {
   var body: some Scene {
     WindowGroup {
       if let store = delegate.store {
-        ZeroView(
+        RootView(
           store: store
         )
       }

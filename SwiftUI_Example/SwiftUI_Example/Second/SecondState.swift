@@ -8,14 +8,14 @@
 import ComposableArchitecture
 
 struct SecondState: Equatable {
-  @BindableState var webViewShowable: Bool
+  @BindableState var modalShowable: Bool
   var navigationFlag: Bool
 
   init(
-    webViewShowable: Bool = false,
+    modalShowable: Bool = false,
     navigationFlag: Bool = false
   ) {
-    self.webViewShowable = webViewShowable
+    self.modalShowable = modalShowable
     self.navigationFlag = navigationFlag
     }
 }

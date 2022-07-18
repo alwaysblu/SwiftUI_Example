@@ -13,7 +13,7 @@ enum FirstAction: Equatable, BindableAction {
   case setNavigationFlag
   
   case secondAction(SecondAction)
-  case modalAction(FirstModalAction)
-  case toggleModalShowable(Bool)
+  case modalAction(ModalAction)
+  case setModalShowable(Bool)
   case onAppear
 }

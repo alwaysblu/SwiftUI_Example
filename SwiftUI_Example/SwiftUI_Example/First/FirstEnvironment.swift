@@ -8,4 +8,5 @@
 import Combine
 
 struct FirstEnvironment {
+  var notificationHandler = NotificationHandler()
 }

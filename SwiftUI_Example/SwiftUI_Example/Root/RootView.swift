@@ -1,5 +1,5 @@
 //
-//  ZeroView.swift
+//  RootView.swift
 //  SwiftUI_Example
 //
 //  Created by 맥북 on 2022/07/13.
@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: View
 
-struct ZeroView: View {
+struct RootView: View {
 
   @ObservedObject
   private var viewStore: ZeroViewStore
@@ -45,8 +45,6 @@ struct ZeroView: View {
       )
     }.onAppear {
       viewStore.send(.onAppear)
-    }.onDisappear {
-      viewStore.send(.setNavigationFlag)
     }
   }
 
@@ -65,15 +63,15 @@ struct ZeroView: View {
 // MARK: Store
 
 typealias ZeroStore = Store<
-  ZeroState,
-  ZeroAction
+  RootState,
+  RootAction
 >
 
 // MARK: ViewStore
 
 typealias ZeroViewStore = ViewStore<
-  ZeroState,
-  ZeroAction
+  RootState,
+  RootAction
 >
 
 // MARK: Preview
@@ -82,7 +80,7 @@ struct ZeroView_Previews: PreviewProvider {
 
   static var previews: some View {
     ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-      ZeroView(store: store)
+      RootView(store: store)
         .preferredColorScheme(colorScheme)
         .previewLayout(.sizeThatFits)
     }

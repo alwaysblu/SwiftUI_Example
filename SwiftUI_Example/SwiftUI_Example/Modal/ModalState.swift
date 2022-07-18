@@ -7,6 +7,6 @@
 
 import ComposableArchitecture
 
-struct FirstModalState: Equatable {
+struct ModalState: Equatable {
   var second: SecondState = .init()
 }

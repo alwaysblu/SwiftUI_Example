@@ -26,25 +26,27 @@ struct SecondView: View {
     ZStack {
       Color.green
         .ignoresSafeArea()
-      ScrollView {
-        VStack {
-          Button("webView", action: {
-            viewStore.send(.toggle)
-          })
-        }
-        .padding()
-      }
+      Button("webView", action: {
+        viewStore.send(.toggle)
+      })
       .fullScreenCover (
-        isPresented: viewStore.binding(\.$webViewShowable),
+        isPresented: viewStore.binding(\.$modalShowable),
         content: {
-          VStack {
-            Button("dismiss") {
-              viewStore.send(.toggle)
-            }
-            cartView
-          }
+          modalView
         }
       )
+    }
+    .onDisappear {
+      viewStore.send(.setModalShowable(false))
+    }
+  }
+
+  var modalView: some View {
+    VStack {
+      Button("dismiss") {
+        viewStore.send(.toggle)
+      }
+      cartView
     }
   }
   
