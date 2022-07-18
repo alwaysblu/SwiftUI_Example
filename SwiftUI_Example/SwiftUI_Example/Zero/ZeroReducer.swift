@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Combine
 
 typealias ZeroReducer = Reducer<
   ZeroState,
@@ -27,13 +28,59 @@ extension ZeroReducer {
           ),
         .init { state, action, environment in
           switch action {
+          case .onAppear:
+
+            return .concatenate(
+              .init(value: .setNextShowable(false)),
+              .init(value: .route),
+              .init(value: .setNavigationFlag)
+            )
+
+          case .setNextShowable(let nextShowable):
+            state.nextShowable = nextShowable
+            return .none
+
           case .firstAction(_):
             return .none
-          case .toggle:
-            state.flag.toggle()
+
+          case .binding:
+            return .none
+
+          case .popAll(let path):
+            state = .init()
+            state.path = path
+            return .none
+
+          case .setNavigationFlag:
+            if state.navigationFlag {
+              state.navigationFlag = false
+            }
+            return .none
+
+          case .route:
+            guard let path = state.path else {
+              return .none
+            }
+            switch path {
+            case .purple:
+              state = ZeroState(
+                nextShowable: true,
+                navigationFlag: true
+              )
+
+            case .green:
+              state = ZeroState(
+                first: .init(
+                  nextShowable: true
+                ),
+                nextShowable: true,
+                navigationFlag: true
+              )
+            }
+            state.path = nil
             return .none
           }
         }
-      )
+      ).debug()
   }
 }

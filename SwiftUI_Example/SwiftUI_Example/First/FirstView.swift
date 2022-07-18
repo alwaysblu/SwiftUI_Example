@@ -24,40 +24,23 @@ struct FirstView: View {
 
   var body: some View {
     ZStack {
-      if viewStore.flag {
-        Color.purple
-          .ignoresSafeArea()
-      } else {
-        Color.black
-          .ignoresSafeArea()
-      }
-      VStack(spacing: 50){
-      NavigationLink(
-        destination:
-          SecondView(
-            store:
-              store
-              .scope(
-                state: \FirstState.second,
-                action: FirstAction.secondAction
-              )
-          )
-      ) {
-        Text("move next view")
-      }
-        Button("show modal") {
-          viewStore.send(.toggleModalShowable)
-        }
-        Button("change color") {
-          viewStore.send(.toggle)
-        }
+      Color.purple
+        .ignoresSafeArea()
+      VStack{
+        NavigationLink(
+          isActive: viewStore.binding(\.$nextShowable),
+          destination: {nextView},
+          label: {
+            contentView
+          }
+        )
       }
       .fullScreenCover (
         isPresented: viewStore.binding(\.$modalShowable),
         content: {
           VStack {
             Button("dismiss") {
-              viewStore.send(.toggleModalShowable)
+              viewStore.send(.toggleModalShowable(false))
             }
             FirstModalView(
               store:
@@ -69,9 +52,35 @@ struct FirstView: View {
           }
         }
       )
-    }.onAppear {
-      viewStore.send(.onAppear)
+      .onAppear {
+        viewStore.send(.onAppear)
+      }
+      .onDisappear {
+        viewStore.send(.toggleModalShowable(false))
+      }
     }
+  }
+
+  var contentView: some View {
+    VStack {
+      Button("show modal") {
+        viewStore.send(.toggleModalShowable(true))
+      }
+      Button("show next view") {
+        viewStore.send(.setNextShowable(true))
+      }
+    }
+  }
+
+  var nextView: some View {
+    SecondView(
+      store:
+        store
+        .scope(
+          state: \FirstState.second,
+          action: FirstAction.secondAction
+        )
+    )
   }
 }
 

@@ -29,18 +29,22 @@ struct FirstModalView: View {
           .ignoresSafeArea()
         NavigationLink(
           destination:
-            SecondView(
-              store:
-                store.scope(
-                  state: \FirstModalState.second,
-                  action: FirstModalAction.secondAction
-                )
-            )
+            nextView
         ) {
           Text("next")
         }
       }
     }
+  }
+
+  var nextView: some View {
+    SecondView(
+      store:
+        store.scope(
+          state: \FirstModalState.second,
+          action: FirstModalAction.secondAction
+        )
+    )
   }
 }
 

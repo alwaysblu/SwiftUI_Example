@@ -34,25 +34,36 @@ extension FirstReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
+            if state.navigationFlag {
+              return .init(value: .setNavigationFlag)
+            }
             state.yellowRequests.forEach { request in
               state.notificationCenter.add(request, withCompletionHandler: nil)
             }
+            state.nextShowable = false
             return .none
+
           case .secondAction:
             return .none
 
           case .modalAction:
             return .none
 
+          case .setNavigationFlag:
+            if state.navigationFlag {
+              state.navigationFlag = false
+            }
+            return .none
+
           case .binding:
             return .none
 
-          case .toggleModalShowable:
-            state.modalShowable.toggle()
+          case .toggleModalShowable(let modalShowable):
+            state.modalShowable = modalShowable
             return .none
 
-          case .toggle:
-            state.flag.toggle()
+          case .setNextShowable(let nextShowable):
+            state.nextShowable = nextShowable
             return .none
           }
         }

@@ -1,23 +1,23 @@
+////
+////  AlwaysEquatable.swift
+////  SwiftUI_Example
+////
+////  Created by 맥북 on 2022/07/14.
+////
 //
-//  AlwaysEquatable.swift
-//  SwiftUI_Example
+//import Foundation
 //
-//  Created by 맥북 on 2022/07/14.
+//@propertyWrapper
+//public struct AlwaysEquatable<Value> {
+//  public var wrappedValue: Value
 //
-
-import Foundation
-
-@propertyWrapper
-public struct AlwaysEquatable<Value> {
-  public var wrappedValue: Value
-
-  public init(wrappedValue: Value) {
-    self.wrappedValue = wrappedValue
-  }
-}
-
-extension AlwaysEquatable: Equatable {
-  public static func == (lhs: Self, rhs: Self) -> Bool {
-    true
-  }
-}
+//  public init(wrappedValue: Value) {
+//    self.wrappedValue = wrappedValue
+//  }
+//}
+//
+//extension AlwaysEquatable: Equatable {
+//  public static func == (lhs: Self, rhs: Self) -> Bool {
+//    true
+//  }
+//}

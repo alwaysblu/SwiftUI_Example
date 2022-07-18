@@ -30,32 +30,35 @@ struct ZeroView: View {
 
   var contentView: some View {
     ZStack {
-      if viewStore.flag {
-        Color.red
-          .ignoresSafeArea()
-      } else {
-        Color.black
-          .ignoresSafeArea()
-      }
+      Color.red
+        .ignoresSafeArea()
       NavigationLink(
-        destination:
-          FirstView(
-            store:
-                .init(
-                  initialState: FirstState(),
-                  reducer: .init(),
-                  environment: FirstEnvironment()
-                )
-          )
-      ) {
-        VStack(spacing: 50) {
-          Button("change color") {
-            viewStore.send(.toggle)
+        isActive: viewStore.binding(\.$nextShowable),
+        destination: {
+          nextView
+        },
+        label: {
+          Button("show next view") {
+            viewStore.send(.setNextShowable(true))
           }
-          Text("show next view")
         }
-      }
+      )
+    }.onAppear {
+      viewStore.send(.onAppear)
+    }.onDisappear {
+      viewStore.send(.setNavigationFlag)
     }
+  }
+
+  var nextView: some View {
+    FirstView(
+      store:
+          .init(
+            initialState: FirstState(),
+            reducer: .init(),
+            environment: FirstEnvironment()
+          )
+    )
   }
 }
 

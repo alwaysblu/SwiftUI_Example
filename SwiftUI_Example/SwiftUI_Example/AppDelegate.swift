@@ -118,11 +118,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void
   ) {
+    viewStore?.send(.popAll(.purple))
     print(response.notification.request.content.userInfo)
-    let view = response.notification.request.content.userInfo["target_view"] as! String
-    if view == "brown_view" {
-      completionHandler()
-    }
   }
 }
 

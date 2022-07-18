@@ -8,10 +8,12 @@
 import ComposableArchitecture
 
 enum FirstAction: Equatable, BindableAction {
+  case binding(BindingAction<FirstState>)
+  case setNextShowable(Bool)
+  case setNavigationFlag
+  
   case secondAction(SecondAction)
   case modalAction(FirstModalAction)
-  case binding(BindingAction<FirstState>)
-  case toggleModalShowable
+  case toggleModalShowable(Bool)
   case onAppear
-  case toggle
 }

@@ -9,10 +9,29 @@ import ComposableArchitecture
 import SwiftUI
 
 struct FirstState: Equatable {
-  @BindableState var modalShowable = false
-  var flag = true
+  @BindableState var nextShowable: Bool//추가됨@@@@@@@@@@@
+  @BindableState var modalShowable: Bool
+  var navigationFlag: Bool
   var second: SecondState
   var modal: FirstModalState
+
+  init(
+    nextShowable: Bool = false,//추가됨@@@@@@@@@@@
+    modalShowable: Bool = false,
+    second: SecondState = .init(),
+    modal: FirstModalState = .init(),
+    navigationFlag: Bool = false
+  ) {
+    self.modalShowable = modalShowable
+    self.nextShowable = nextShowable//추가됨@@@@@@@@@@@
+    self.second = second
+    self.modal = modal
+    self.navigationFlag = navigationFlag
+    self.second.navigationFlag = navigationFlag
+  }
+
+// MARK: Local FCM
+
   let yellowContent: UNMutableNotificationContent = {
     let content = UNMutableNotificationContent()
     content.title = "Hi there"
@@ -55,12 +74,4 @@ struct FirstState: Equatable {
 
     return center
   }()
-
-  init(
-    second: SecondState = .init(),
-    modal: FirstModalState = .init()
-  ) {
-    self.second = second
-    self.modal = modal
-  }
 }

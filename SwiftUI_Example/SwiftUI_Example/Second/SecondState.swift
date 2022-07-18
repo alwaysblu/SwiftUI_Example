@@ -8,5 +8,14 @@
 import ComposableArchitecture
 
 struct SecondState: Equatable {
-  @BindableState var webViewShowable: Bool = false
+  @BindableState var webViewShowable: Bool
+  var navigationFlag: Bool
+
+  init(
+    webViewShowable: Bool = false,
+    navigationFlag: Bool = false
+  ) {
+    self.webViewShowable = webViewShowable
+    self.navigationFlag = navigationFlag
+    }
 }
