@@ -34,9 +34,6 @@ extension FirstReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            if state.navigationFlag {
-              return .init(value: .setNavigationFlag)
-            }
             environment.notificationHandler.push()
             return .none
 
@@ -44,12 +41,6 @@ extension FirstReducer {
             return .none
 
           case .modalAction:
-            return .none
-
-          case .setNavigationFlag:
-            if state.navigationFlag {
-              state.navigationFlag = false
-            }
             return .none
 
           case .binding:

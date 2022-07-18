@@ -13,20 +13,16 @@ struct FirstState: Equatable {
   @BindableState var modalShowable: Bool
   var second: SecondState
   var modal: ModalState
-  var navigationFlag: Bool
 
   init(
     nextShowable: Bool = false,
     modalShowable: Bool = false,
     second: SecondState = .init(),
-    modal: ModalState = .init(),
-    navigationFlag: Bool = false
+    modal: ModalState = .init()
   ) {
     self.modalShowable = modalShowable
     self.nextShowable = nextShowable
     self.second = second
     self.modal = modal
-    self.navigationFlag = navigationFlag
-    self.second.navigationFlag = navigationFlag
   }
 }

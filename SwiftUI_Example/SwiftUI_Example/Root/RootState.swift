@@ -12,17 +12,14 @@ struct RootState: Equatable {
   @BindableState var nextShowable: Bool
   var first: FirstState
   var path: NavigationPath?
-  var navigationFlag: Bool
 
   init(
     first: FirstState = .init(),
     nextShowable: Bool = false,
-    path: NavigationPath? = nil,
-    navigationFlag: Bool = false
+    path: NavigationPath? = nil
   ) {
     self.nextShowable = nextShowable
     self.first = first
     self.path = path
-    self.navigationFlag = navigationFlag
   }
 }

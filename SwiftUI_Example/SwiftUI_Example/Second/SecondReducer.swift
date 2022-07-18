@@ -20,19 +20,10 @@ extension SecondReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            if state.navigationFlag {
-              return .init(value: .setNavigationFlag)
-            }
             return .none
 
           case .toggle :
             state.modalShowable.toggle()
-            return .none
-
-          case .setNavigationFlag:
-            if state.navigationFlag {
-              state.navigationFlag = false
-            }
             return .none
 
           case .setModalShowable(let modalShowable):

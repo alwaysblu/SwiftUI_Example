@@ -9,13 +9,10 @@ import ComposableArchitecture
 
 struct SecondState: Equatable {
   @BindableState var modalShowable: Bool
-  var navigationFlag: Bool
 
   init(
-    modalShowable: Bool = false,
-    navigationFlag: Bool = false
+    modalShowable: Bool = false
   ) {
     self.modalShowable = modalShowable
-    self.navigationFlag = navigationFlag
-    }
+  }
 }

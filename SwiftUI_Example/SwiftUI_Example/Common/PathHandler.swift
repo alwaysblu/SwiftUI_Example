@@ -21,18 +21,15 @@ struct PathHandler {
   private func makeGreenPath() -> RootState {
     RootState(
      first: .init(
-       nextShowable: true,
-       navigationFlag: true
+       nextShowable: true
      ),
-     nextShowable: true,
-     navigationFlag: true
+     nextShowable: true
    )
   }
 
   private func makePurplePath() -> RootState {
     RootState(
-      nextShowable: true,
-      navigationFlag: true
+      nextShowable: true
     )
   }
 }
