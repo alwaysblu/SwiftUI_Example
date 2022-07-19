@@ -34,6 +34,14 @@ extension FirstReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
+            if let setter = state.nextShowableSetter {
+              state.nextShowable = setter
+              state.nextShowableSetter = nil
+            }
+            if let setter = state.modalShowableSetter {
+              state.modalShowable = setter
+              state.modalShowableSetter = nil
+            }
             environment.notificationHandler.push()
             return .none
 

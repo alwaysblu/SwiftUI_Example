@@ -10,4 +10,5 @@ import Foundation
 enum NavigationPath {
   case green
   case purple
+  case modalGreen
 }

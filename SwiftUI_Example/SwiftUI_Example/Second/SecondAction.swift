@@ -10,6 +10,5 @@ import ComposableArchitecture
 enum SecondAction: Equatable, BindableAction {
   case onAppear
   case binding(BindingAction<SecondState>)
-  case toggle
   case setModalShowable(Bool)
 }

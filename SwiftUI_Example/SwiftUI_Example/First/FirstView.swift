@@ -29,13 +29,15 @@ struct FirstView: View {
       VStack{
         NavigationLink(
           isActive: viewStore.binding(\.$nextShowable),
-          destination: {nextView},
+          destination: {
+            nextView
+          },
           label: {
             contentView
           }
         )
       }
-      .fullScreenCover (
+      .sheet (
         isPresented: viewStore.binding(\.$modalShowable),
         content: {
           modalView
@@ -43,9 +45,6 @@ struct FirstView: View {
       )
       .onAppear {
         viewStore.send(.onAppear)
-      }
-      .onDisappear {
-        viewStore.send(.setModalShowable(false))
       }
     }
   }
@@ -102,21 +101,4 @@ typealias FirstViewStore = ViewStore<
   FirstAction
 >
 
-// MARK: Preview
 
-struct FirstView_Previews: PreviewProvider {
-
-  static var previews: some View {
-    ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-      FirstView(store: store)
-        .preferredColorScheme(colorScheme)
-        .previewLayout(.sizeThatFits)
-    }
-  }
-
-  static let store: FirstStore = .init(
-    initialState: .init(),
-    reducer: .init(),
-    environment: .init()
-  )
-}

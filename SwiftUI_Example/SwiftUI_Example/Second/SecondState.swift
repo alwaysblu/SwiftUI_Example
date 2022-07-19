@@ -9,10 +9,13 @@ import ComposableArchitecture
 
 struct SecondState: Equatable {
   @BindableState var modalShowable: Bool
+  var modalShowableSetter: Bool?
 
   init(
-    modalShowable: Bool = false
+    modalShowable: Bool = false,
+    modalShowableSetter: Bool? = nil
   ) {
     self.modalShowable = modalShowable
+    self.modalShowableSetter = modalShowableSetter
   }
 }

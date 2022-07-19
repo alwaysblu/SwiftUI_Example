@@ -43,19 +43,15 @@ struct RootView: View {
           }
         }
       )
-    }.onAppear {
-      viewStore.send(.onAppear)
     }
   }
 
   var nextView: some View {
     FirstView(
-      store:
-          .init(
-            initialState: FirstState(),
-            reducer: .init(),
-            environment: FirstEnvironment()
-          )
+      store: store.scope(
+        state: \.first,
+        action: RootAction.firstAction
+      )
     )
   }
 }
@@ -74,21 +70,3 @@ typealias ZeroViewStore = ViewStore<
   RootAction
 >
 
-// MARK: Preview
-
-struct ZeroView_Previews: PreviewProvider {
-
-  static var previews: some View {
-    ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-      RootView(store: store)
-        .preferredColorScheme(colorScheme)
-        .previewLayout(.sizeThatFits)
-    }
-  }
-
-  static let store: ZeroStore = .init(
-    initialState: .init(),
-    reducer: .init(),
-    environment: .init()
-  )
-}

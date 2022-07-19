@@ -27,7 +27,7 @@ struct SecondView: View {
       Color.green
         .ignoresSafeArea()
       Button("webView", action: {
-        viewStore.send(.toggle)
+        viewStore.send(.setModalShowable(true))
       })
       .fullScreenCover (
         isPresented: viewStore.binding(\.$modalShowable),
@@ -44,7 +44,7 @@ struct SecondView: View {
   var modalView: some View {
     VStack {
       Button("dismiss") {
-        viewStore.send(.toggle)
+        viewStore.send(.setModalShowable(false))
       }
       cartView
     }
@@ -77,22 +77,3 @@ typealias CartViewStore = ViewStore<
   SecondState,
   SecondAction
 >
-
-// MARK: Preview
-
-struct CartView_Previews: PreviewProvider {
-
-  static var previews: some View {
-    ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-      SecondView(store: store)
-        .preferredColorScheme(colorScheme)
-        .previewLayout(.sizeThatFits)
-    }
-  }
-
-  static let store: CartStore = .init(
-    initialState: .init(),
-    reducer: .init(),
-    environment: .init()
-  )
-}

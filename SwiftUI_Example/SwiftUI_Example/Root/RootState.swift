@@ -10,16 +10,19 @@ import SwiftUI
 
 struct RootState: Equatable {
   @BindableState var nextShowable: Bool
-  var first: FirstState
+  @AlwaysEquatable var first: FirstState
   var path: NavigationPath?
+  var nextShowableSetter: Bool?
 
   init(
-    first: FirstState = .init(),
     nextShowable: Bool = false,
-    path: NavigationPath? = nil
+    first: FirstState = .init(),
+    path: NavigationPath? = nil,
+    nextShowableSetter: Bool? = nil
   ) {
     self.nextShowable = nextShowable
     self.first = first
     self.path = path
+    self.nextShowableSetter = nextShowableSetter
   }
 }

@@ -28,12 +28,17 @@ struct ModalView: View {
         Color.brown
           .ignoresSafeArea()
         NavigationLink(
-          destination:
-            nextView
-        ) {
-          Text("next")
-        }
+          isActive: viewStore.binding(\.$nextShowable),
+          destination: { nextView },
+          label: {
+            Button("show next view") {
+              viewStore.send(.setNextShowable(true))
+            }
+          }
+        )
       }
+    }.onAppear {
+      viewStore.send(.onAppear)
     }
   }
 
@@ -61,22 +66,3 @@ typealias FirstModalViewStore = ViewStore<
   ModalState,
   ModalAction
 >
-
-// MARK: Preview
-
-struct FirstModalView_Previews: PreviewProvider {
-
-  static var previews: some View {
-    ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-      ModalView(store: store)
-        .preferredColorScheme(colorScheme)
-        .previewLayout(.sizeThatFits)
-    }
-  }
-
-  static let store: FirstModalStore = .init(
-    initialState: .init(),
-    reducer: .init(),
-    environment: .init()
-  )
-}

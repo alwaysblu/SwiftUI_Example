@@ -8,10 +8,9 @@
 import ComposableArchitecture
 
 enum RootAction: Equatable, BindableAction {
-  case onAppear
   case binding(BindingAction<RootState>)
   case setNextShowable(Bool)
   case route(NavigationPath)
-
+  case setShowables(Result<Bool?, Never>)
   case firstAction(FirstAction)
 }

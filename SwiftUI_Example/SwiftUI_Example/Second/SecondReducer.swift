@@ -20,10 +20,10 @@ extension SecondReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            return .none
-
-          case .toggle :
-            state.modalShowable.toggle()
+            if let setter = state.modalShowableSetter {
+              state.modalShowable = setter
+              state.modalShowableSetter = nil
+            }
             return .none
 
           case .setModalShowable(let modalShowable):

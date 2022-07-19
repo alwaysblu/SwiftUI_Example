@@ -15,21 +15,36 @@ struct PathHandler {
 
     case .purple:
       return makePurplePath()
+
+    case .modalGreen:
+      return makeModalGreenPath()
     }
   }
 
   private func makeGreenPath() -> RootState {
     RootState(
-     first: .init(
-       nextShowable: true
-     ),
-     nextShowable: true
+      first: .init(
+        nextShowableSetter: true
+      ),
+      nextShowableSetter: true
    )
   }
 
   private func makePurplePath() -> RootState {
     RootState(
-      nextShowable: true
+      nextShowableSetter: true
+    )
+  }
+
+  private func makeModalGreenPath() -> RootState {
+    RootState(
+      first: .init(
+        modal: .init(
+          nextShowableSetter: true
+        ),
+        modalShowableSetter: true
+      ),
+      nextShowableSetter: true
     )
   }
 }

@@ -118,10 +118,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void
   ) {
-    viewStore?.send(.route(.green))
+    viewStore?.send(.route(.modalGreen))
     print(response.notification.request.content.userInfo)
   }
 }
-
-
-
