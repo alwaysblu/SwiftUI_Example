@@ -48,6 +48,7 @@
 		25C3EC512880212B000A1B93 /* AlwaysEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */; };
 		25C3EC542881285C000A1B93 /* FNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC532881285C000A1B93 /* FNavigationStack.swift */; };
 		25C3EC5628812872000A1B93 /* FNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC5528812872000A1B93 /* FNavigationStackView.swift */; };
+		8AA638FB2888B2B4003A97A5 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA638FA2888B2B3003A97A5 /* NavigationState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysEquatable.swift; sourceTree = "<group>"; };
 		25C3EC532881285C000A1B93 /* FNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNavigationStack.swift; sourceTree = "<group>"; };
 		25C3EC5528812872000A1B93 /* FNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNavigationStackView.swift; sourceTree = "<group>"; };
+		8AA638FA2888B2B3003A97A5 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				256693972885F7920095C99E /* NavigationPath.swift */,
 				2566939A2885FF660095C99E /* NotificationHandler.swift */,
 				2566939C2885FF710095C99E /* PathHandler.swift */,
+				8AA638FA2888B2B3003A97A5 /* NavigationState.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				25C3EC14287E61A3000A1B93 /* ModalView.swift in Sources */,
 				25C3EBE92875A74E000A1B93 /* SecondAction.swift in Sources */,
 				25C3EC0A287E5CA6000A1B93 /* FirstEnvironment.swift in Sources */,
+				8AA638FB2888B2B4003A97A5 /* NavigationState.swift in Sources */,
 				25C3EC16287E61A3000A1B93 /* ModalReducer.swift in Sources */,
 				2566939B2885FF660095C99E /* NotificationHandler.swift in Sources */,
 				256A5A092873E1CB00428616 /* WebView.swift in Sources */,

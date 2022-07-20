@@ -9,10 +9,13 @@ import ComposableArchitecture
 import SwiftUI
 
 struct FirstState: Equatable {
-  @BindableState var nextShowable: Bool
-  @BindableState var modalShowable: Bool
   var second: SecondState
   var modal: ModalState
+  @BindableState var nextShowable: Bool
+  @BindableState var modalShowable: Bool
+
+
+  var navState: NavigationState<KeyPath<FirstState, Bool>>
   var nextShowableSetter: Bool?
   var modalShowableSetter: Bool?
   var id: UUID
@@ -23,6 +26,7 @@ struct FirstState: Equatable {
     modalShowable: Bool = false,
     second: SecondState = .init(),
     modal: ModalState = .init(),
+    navState: NavigationState<KeyPath<FirstState, Bool>> = .init(),
     nextShowableSetter: Bool? = false,
     modalShowableSetter: Bool? = nil,
     id: UUID = UUID(),
@@ -36,5 +40,8 @@ struct FirstState: Equatable {
     self.modalShowableSetter = modalShowableSetter
     self.id = id
     self.delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(delayTime)
+    self.navState = navState
+    self.navState.showableSetters[\.nextShowable] = nil
+    self.navState.showableSetters[\.modalShowable] = nil
   }
 }
