@@ -11,58 +11,68 @@ struct PathHandler {
   func getRootState(_ path: NavigationPath) -> RootState {
     switch path {
     case .green:
-      return makeGreenPath()
+      return makeGreenPath(delayTime: 250)
 
     case .purple:
-      return makePurplePath()
+      return makePurplePath(delayTime: 250)
 
     case .modalGreen:
-      return makeModalGreenPath()
+      return makeModalGreenPath(delayTime: 500)
 
     case .modalGreenWebView:
-      return makeModalGreenWebView()
+      return makeModalGreenWebView(delayTime: 750)
     }
   }
 
-  private func makeGreenPath() -> RootState {
+  private func makeGreenPath(delayTime: Int) -> RootState {
     RootState(
       first: .init(
-        nextShowableSetter: true
+        nextShowableSetter: true,
+        delayTime: delayTime
       ),
-      nextShowableSetter: true
+      nextShowableSetter: true,
+      delayTime: delayTime
    )
   }
 
-  private func makePurplePath() -> RootState {
+  private func makePurplePath(delayTime: Int) -> RootState {
     RootState(
-      nextShowableSetter: true
+      nextShowableSetter: true,
+      delayTime: delayTime
     )
   }
 
-  private func makeModalGreenPath() -> RootState {
+  private func makeModalGreenPath(delayTime: Int) -> RootState {
     RootState(
       first: .init(
         modal: .init(
-          nextShowableSetter: true
+          nextShowableSetter: true,
+          delayTime: delayTime
         ),
-        modalShowableSetter: true
+        modalShowableSetter: true,
+        delayTime: delayTime
       ),
-      nextShowableSetter: true
+      nextShowableSetter: true,
+      delayTime: delayTime
     )
   }
 
-  private func makeModalGreenWebView() -> RootState {
+  private func makeModalGreenWebView(delayTime: Int) -> RootState {
     RootState(
       first: .init(
         modal: .init(
           second:.init(
-            modalShowableSetter: true
+            modalShowableSetter: true,
+            delayTime: delayTime
           ),
-          nextShowableSetter: true
+          nextShowableSetter: true,
+          delayTime: delayTime
         ),
-        modalShowableSetter: true
+        modalShowableSetter: true,
+        delayTime: delayTime
       ),
-      nextShowableSetter: true
+      nextShowableSetter: true,
+      delayTime: delayTime
     )
   }
 }

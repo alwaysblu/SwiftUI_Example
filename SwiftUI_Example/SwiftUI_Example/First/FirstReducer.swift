@@ -37,7 +37,7 @@ extension FirstReducer {
           case .onAppear:
             environment.notificationHandler.push()
             return Just(state.id)
-              .delay(for: delayTime, scheduler: DispatchQueue.main)
+              .delay(for: state.delayTime, scheduler: DispatchQueue.main)
               .catchToEffect(FirstAction.setShowables)
 
           case .secondAction:

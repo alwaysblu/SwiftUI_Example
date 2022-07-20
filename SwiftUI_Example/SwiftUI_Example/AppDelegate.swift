@@ -8,8 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseMessaging
-
-let delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(750)
+var delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(750)
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -120,7 +119,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void
   ) {
-    viewStore?.send(.route(.modalGreenWebView))
+    viewStore?.send(.route(.green))
     print(response.notification.request.content.userInfo)
   }
 }

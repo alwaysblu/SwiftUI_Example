@@ -16,6 +16,7 @@ struct FirstState: Equatable {
   var nextShowableSetter: Bool?
   var modalShowableSetter: Bool?
   var id: UUID
+  var delayTime: DispatchQueue.SchedulerTimeType.Stride
 
   init(
     nextShowable: Bool = false,
@@ -24,7 +25,8 @@ struct FirstState: Equatable {
     modal: ModalState = .init(),
     nextShowableSetter: Bool? = nil,
     modalShowableSetter: Bool? = nil,
-    id: UUID = UUID()
+    id: UUID = UUID(),
+    delayTime: Int = 250
   ) {
     self.modalShowable = modalShowable
     self.nextShowable = nextShowable
@@ -33,5 +35,6 @@ struct FirstState: Equatable {
     self.nextShowableSetter = nextShowableSetter
     self.modalShowableSetter = modalShowableSetter
     self.id = id
+    self.delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(delayTime)
   }
 }

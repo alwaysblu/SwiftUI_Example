@@ -15,18 +15,21 @@ struct RootState: Equatable {
   var path: NavigationPath?
   var nextShowableSetter: Bool?
   var id: UUID
+  var delayTime: DispatchQueue.SchedulerTimeType.Stride
 
   init(
     nextShowable: Bool = false,
     first: FirstState = .init(),
     path: NavigationPath? = nil,
     nextShowableSetter: Bool? = nil,
-    id: UUID = .init()
+    id: UUID = .init(),
+    delayTime: Int = 250
   ) {
     self.nextShowable = nextShowable
     self.first = first
     self.path = path
     self.nextShowableSetter = nextShowableSetter
     self.id = id
+    self.delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(delayTime)
   }
 }

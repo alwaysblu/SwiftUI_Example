@@ -29,7 +29,7 @@ extension ModalReducer {
           switch action {
           case .onAppear:
             return Just(state.id)
-              .delay(for: delayTime, scheduler: DispatchQueue.main)
+              .delay(for: state.delayTime, scheduler: DispatchQueue.main)
               .catchToEffect(ModalAction.setShowables)
 
           case.secondAction:

@@ -49,7 +49,7 @@ extension RootReducer {
             state.path = path
 
             return Just(state.id)
-              .delay(for: delayTime, scheduler: DispatchQueue.main)
+              .delay(for: state.delayTime, scheduler: DispatchQueue.main)
               .catchToEffect(RootAction.setShowables)
 
           case .setShowables(.success(let id)):
