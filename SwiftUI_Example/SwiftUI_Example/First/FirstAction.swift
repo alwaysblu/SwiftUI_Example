@@ -10,7 +10,7 @@ import ComposableArchitecture
 enum FirstAction: Equatable, BindableAction {
   case binding(BindingAction<FirstState>)
   case setNextShowable(Bool)
-  case setShowables
+  case setShowables(Result<UUID, Never>)
   case secondAction(SecondAction)
   case modalAction(ModalAction)
   case setModalShowable(Bool)

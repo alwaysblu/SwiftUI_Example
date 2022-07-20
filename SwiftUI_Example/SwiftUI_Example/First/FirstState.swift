@@ -15,6 +15,7 @@ struct FirstState: Equatable {
   var modal: ModalState
   var nextShowableSetter: Bool?
   var modalShowableSetter: Bool?
+  var id: UUID
 
   init(
     nextShowable: Bool = false,
@@ -22,7 +23,8 @@ struct FirstState: Equatable {
     second: SecondState = .init(),
     modal: ModalState = .init(),
     nextShowableSetter: Bool? = nil,
-    modalShowableSetter: Bool? = nil
+    modalShowableSetter: Bool? = nil,
+    id: UUID = UUID()
   ) {
     self.modalShowable = modalShowable
     self.nextShowable = nextShowable
@@ -30,5 +32,6 @@ struct FirstState: Equatable {
     self.modal = modal
     self.nextShowableSetter = nextShowableSetter
     self.modalShowableSetter = modalShowableSetter
+    self.id = id
   }
 }

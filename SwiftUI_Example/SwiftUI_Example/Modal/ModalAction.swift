@@ -12,5 +12,5 @@ enum ModalAction: Equatable, BindableAction {
   case binding(BindingAction<ModalState>)
   case secondAction(SecondAction)
   case setNextShowable(Bool)
-  case setShowables
+  case setShowables(Result<UUID, Never>)
 }

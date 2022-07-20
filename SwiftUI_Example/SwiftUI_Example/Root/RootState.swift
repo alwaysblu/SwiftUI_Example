@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Combine
 import SwiftUI
 
 struct RootState: Equatable {
@@ -13,16 +14,19 @@ struct RootState: Equatable {
   @AlwaysEquatable var first: FirstState
   var path: NavigationPath?
   var nextShowableSetter: Bool?
+  var id: UUID
 
   init(
     nextShowable: Bool = false,
     first: FirstState = .init(),
     path: NavigationPath? = nil,
-    nextShowableSetter: Bool? = nil
+    nextShowableSetter: Bool? = nil,
+    id: UUID = .init()
   ) {
     self.nextShowable = nextShowable
     self.first = first
     self.path = path
     self.nextShowableSetter = nextShowableSetter
+    self.id = id
   }
 }

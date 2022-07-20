@@ -11,7 +11,7 @@ enum RootAction: Equatable, BindableAction {
   case binding(BindingAction<RootState>)
   case setNextShowable(Bool)
   case route(NavigationPath)
-  case setShowables
+  case setShowables(Result<UUID, Never>)
   case firstAction(FirstAction)
   case onAppear
 }

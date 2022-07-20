@@ -36,9 +36,9 @@ extension FirstReducer {
           switch action {
           case .onAppear:
             environment.notificationHandler.push()
-            return .init(value: .setShowables)
+            return Just(state.id)
               .delay(for: delayTime, scheduler: DispatchQueue.main)
-              .eraseToEffect()
+              .catchToEffect(FirstAction.setShowables)
 
           case .secondAction:
             return .none
@@ -57,7 +57,10 @@ extension FirstReducer {
             state.nextShowable = nextShowable
             return .none
 
-          case .setShowables :
+          case .setShowables(.success(let id)) :
+            guard state.id == id else {
+              return .none
+            }
             if let setter = state.nextShowableSetter {
               state.nextShowable = setter
               state.nextShowableSetter = nil

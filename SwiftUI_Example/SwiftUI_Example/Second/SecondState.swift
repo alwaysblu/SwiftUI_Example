@@ -10,12 +10,15 @@ import ComposableArchitecture
 struct SecondState: Equatable {
   @BindableState var modalShowable: Bool
   var modalShowableSetter: Bool?
+  var id: UUID
 
   init(
     modalShowable: Bool = false,
-    modalShowableSetter: Bool? = nil
+    modalShowableSetter: Bool? = nil,
+    id: UUID = UUID()
   ) {
     self.modalShowable = modalShowable
     self.modalShowableSetter = modalShowableSetter
+    self.id = id
   }
 }

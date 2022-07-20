@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseMessaging
 
-let delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(1000)
+let delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(750)
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

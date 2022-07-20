@@ -5,6 +5,7 @@
 //  Created by 맥북 on 2022/07/13.
 //
 
+import Combine
 import ComposableArchitecture
 
 typealias ModalReducer = Reducer<
@@ -27,9 +28,9 @@ extension ModalReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            return .init(value: .setShowables)
+            return Just(state.id)
               .delay(for: delayTime, scheduler: DispatchQueue.main)
-              .eraseToEffect()
+              .catchToEffect(ModalAction.setShowables)
 
           case.secondAction:
             return .none
@@ -41,7 +42,10 @@ extension ModalReducer {
           case .binding:
             return .none
 
-          case .setShowables:
+          case .setShowables(.success(let id)):
+            guard state.id == id else {
+              return .none
+            }
             if let setter = state.nextShowableSetter {
               state.nextShowable = setter
               state.nextShowableSetter = nil
