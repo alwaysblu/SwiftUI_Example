@@ -26,7 +26,7 @@ struct FirstState: Equatable {
     nextShowableSetter: Bool? = false,
     modalShowableSetter: Bool? = nil,
     id: UUID = UUID(),
-    delayTime: Int = 250
+    delayTime: Int = 50
   ) {
     self.modalShowable = modalShowable
     self.nextShowable = nextShowable

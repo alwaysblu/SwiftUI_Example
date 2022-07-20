@@ -46,6 +46,5 @@ extension SecondReducer {
         }
       )
       .binding()
-      .debug()
   }
 }

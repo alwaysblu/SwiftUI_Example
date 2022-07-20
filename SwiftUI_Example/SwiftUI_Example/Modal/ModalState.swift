@@ -19,7 +19,7 @@ struct ModalState: Equatable {
     second: SecondState = .init(),
     nextShowableSetter: Bool? = nil,
     id: UUID = UUID(),
-    delayTime: Int = 250
+    delayTime: Int = 50
   ) {
     self.nextShowable = nextShowable
     self.second = second

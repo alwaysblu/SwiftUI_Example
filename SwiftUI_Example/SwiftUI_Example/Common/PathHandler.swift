@@ -8,8 +8,8 @@
 import Foundation
 
 struct PathHandler {
-  private let modalDelay = 20
-  private let nextDelay = 20
+  private let modalDelay = 30
+  private let nextDelay = 30
 
   func getRootState(_ path: NavigationPath) -> RootState {
     switch path {

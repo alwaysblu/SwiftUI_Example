@@ -70,6 +70,8 @@ extension RootReducer {
 
           }
         }
-      ).debug()
+      )
+      .debug()
+      .binding()
   }
 }

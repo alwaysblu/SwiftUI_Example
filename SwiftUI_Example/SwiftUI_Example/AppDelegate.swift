@@ -121,7 +121,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
   ) {
     UIView.setAnimationsEnabled(false)
     viewStore?.send(.route(.modalGreenWebView))
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
       UIView.setAnimationsEnabled(true)
     }
     print(response.notification.request.content.userInfo)

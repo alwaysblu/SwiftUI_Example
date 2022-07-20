@@ -23,7 +23,7 @@ struct RootState: Equatable {
     path: NavigationPath? = nil,
     nextShowableSetter: Bool? = nil,
     id: UUID = .init(),
-    delayTime: Int = 250
+    delayTime: Int = 50
   ) {
     self.nextShowable = nextShowable
     self.first = first
