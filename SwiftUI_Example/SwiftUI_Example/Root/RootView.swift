@@ -44,7 +44,8 @@ struct RootView: View {
           }
         }
       )
-    }.onAppear {
+    }
+    .onAppear {
       viewStore.send(.onAppear)
     }
   }

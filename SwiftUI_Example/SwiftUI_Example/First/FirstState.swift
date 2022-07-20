@@ -23,7 +23,7 @@ struct FirstState: Equatable {
     modalShowable: Bool = false,
     second: SecondState = .init(),
     modal: ModalState = .init(),
-    nextShowableSetter: Bool? = nil,
+    nextShowableSetter: Bool? = false,
     modalShowableSetter: Bool? = nil,
     id: UUID = UUID(),
     delayTime: Int = 250

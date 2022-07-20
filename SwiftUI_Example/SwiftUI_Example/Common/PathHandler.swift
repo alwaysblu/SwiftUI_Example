@@ -8,71 +8,74 @@
 import Foundation
 
 struct PathHandler {
+  private let modalDelay = 20
+  private let nextDelay = 20
+
   func getRootState(_ path: NavigationPath) -> RootState {
     switch path {
     case .green:
-      return makeGreenPath(delayTime: 250)
+      return makeGreenPath(modalDelay: modalDelay, nextDelay: nextDelay)
 
     case .purple:
-      return makePurplePath(delayTime: 250)
+      return makePurplePath(modalDelay: modalDelay, nextDelay: nextDelay)
 
     case .modalGreen:
-      return makeModalGreenPath(delayTime: 500)
+      return makeModalGreenPath(modalDelay: modalDelay, nextDelay: nextDelay)
 
     case .modalGreenWebView:
-      return makeModalGreenWebView(delayTime: 750)
+      return makeModalGreenWebView(modalDelay: modalDelay, nextDelay: nextDelay)
     }
   }
 
-  private func makeGreenPath(delayTime: Int) -> RootState {
+  private func makeGreenPath(modalDelay: Int, nextDelay: Int) -> RootState {
     RootState(
       first: .init(
         nextShowableSetter: true,
-        delayTime: delayTime
+        delayTime: nextDelay
       ),
       nextShowableSetter: true,
-      delayTime: delayTime
+      delayTime: nextDelay
    )
   }
 
-  private func makePurplePath(delayTime: Int) -> RootState {
+  private func makePurplePath(modalDelay: Int, nextDelay: Int) -> RootState {
     RootState(
       nextShowableSetter: true,
-      delayTime: delayTime
+      delayTime: nextDelay
     )
   }
 
-  private func makeModalGreenPath(delayTime: Int) -> RootState {
+  private func makeModalGreenPath(modalDelay: Int, nextDelay: Int) -> RootState {
     RootState(
       first: .init(
         modal: .init(
           nextShowableSetter: true,
-          delayTime: delayTime
+          delayTime: nextDelay
         ),
         modalShowableSetter: true,
-        delayTime: delayTime
+        delayTime: modalDelay
       ),
       nextShowableSetter: true,
-      delayTime: delayTime
+      delayTime: nextDelay
     )
   }
 
-  private func makeModalGreenWebView(delayTime: Int) -> RootState {
+  private func makeModalGreenWebView(modalDelay: Int, nextDelay: Int) -> RootState {
     RootState(
       first: .init(
         modal: .init(
           second:.init(
             modalShowableSetter: true,
-            delayTime: delayTime
+            delayTime: modalDelay
           ),
           nextShowableSetter: true,
-          delayTime: delayTime
+          delayTime: nextDelay
         ),
         modalShowableSetter: true,
-        delayTime: delayTime
+        delayTime: modalDelay
       ),
       nextShowableSetter: true,
-      delayTime: delayTime
+      delayTime: nextDelay
     )
   }
 }

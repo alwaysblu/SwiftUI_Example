@@ -22,8 +22,8 @@ extension SecondReducer {
           switch action {
           case .onAppear:
             return Just(state.id)
-              .delay(for: state.delayTime, scheduler: DispatchQueue.main)
-              .catchToEffect(SecondAction.setShowables)
+                .delay(for: state.delayTime, scheduler: DispatchQueue.main)
+                .catchToEffect(SecondAction.setShowables)
 
           case .setModalShowable(let modalShowable):
             state.modalShowable = modalShowable
@@ -41,6 +41,7 @@ extension SecondReducer {
               state.modalShowableSetter = nil
             }
             return .none
+            
           }
         }
       )

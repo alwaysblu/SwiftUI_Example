@@ -27,9 +27,9 @@ final class NotificationHandler {
   }
 
   private let triggers = [
+    UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(1),repeats: false),
+    UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(2),repeats: false),
     UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(3),repeats: false),
-    UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(6),repeats: false),
-    UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(9),repeats: false),
   ]
 
   private let notificationCenter: UNUserNotificationCenter = {

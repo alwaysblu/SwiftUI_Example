@@ -37,7 +37,7 @@ struct FirstView: View {
           }
         )
       }
-      .sheet (
+      .fullScreenCover (
         isPresented: viewStore.binding(\.$modalShowable),
         content: {
           modalView

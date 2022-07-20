@@ -34,6 +34,7 @@ extension RootReducer {
             }
             return .init(value: .setShowables(.success(state.id)))
 
+
           case .setNextShowable(let nextShowable):
             state.nextShowable = nextShowable
             return .none
@@ -66,6 +67,7 @@ extension RootReducer {
               state.path = nil
             }
             return .none
+
           }
         }
       ).debug()

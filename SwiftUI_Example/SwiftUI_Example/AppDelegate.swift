@@ -119,7 +119,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void
   ) {
-    viewStore?.send(.route(.green))
+    UIView.setAnimationsEnabled(false)
+    viewStore?.send(.route(.modalGreenWebView))
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      UIView.setAnimationsEnabled(true)
+    }
     print(response.notification.request.content.userInfo)
   }
 }
