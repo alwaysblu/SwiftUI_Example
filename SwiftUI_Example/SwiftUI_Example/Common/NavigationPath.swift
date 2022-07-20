@@ -11,4 +11,5 @@ enum NavigationPath {
   case green
   case purple
   case modalGreen
+  case modalGreenWebView
 }

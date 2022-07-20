@@ -36,6 +36,9 @@ struct SecondView: View {
         }
       )
     }
+    .onAppear {
+      viewStore.send(.onAppear)
+    }
     .onDisappear {
       viewStore.send(.setModalShowable(false))
     }

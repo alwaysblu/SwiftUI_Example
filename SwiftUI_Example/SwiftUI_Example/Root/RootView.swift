@@ -30,7 +30,8 @@ struct RootView: View {
 
   var contentView: some View {
     ZStack {
-      Color.red
+      Color
+        .red
         .ignoresSafeArea()
       NavigationLink(
         isActive: viewStore.binding(\.$nextShowable),
@@ -43,6 +44,8 @@ struct RootView: View {
           }
         }
       )
+    }.onAppear {
+      viewStore.send(.onAppear)
     }
   }
 

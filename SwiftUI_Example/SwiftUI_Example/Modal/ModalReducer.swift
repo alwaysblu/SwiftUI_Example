@@ -27,12 +27,9 @@ extension ModalReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            if let setter = state.nextShowableSetter {
-              state.nextShowable = setter
-              sleep(1)
-              state.nextShowableSetter = nil
-            }
-            return .none
+            return .init(value: .setShowables)
+              .delay(for: delayTime, scheduler: DispatchQueue.main)
+              .eraseToEffect()
 
           case.secondAction:
             return .none
@@ -42,6 +39,13 @@ extension ModalReducer {
             return .none
 
           case .binding:
+            return .none
+
+          case .setShowables:
+            if let setter = state.nextShowableSetter {
+              state.nextShowable = setter
+              state.nextShowableSetter = nil
+            }
             return .none
           }
         }

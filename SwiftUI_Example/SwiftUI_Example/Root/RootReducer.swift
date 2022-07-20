@@ -28,6 +28,12 @@ extension RootReducer {
           ),
         .init { state, action, environment in
           switch action {
+          case .onAppear:
+            guard state.path == nil else {
+              return .none
+            }
+            return .init(value: .setShowables)
+
           case .setNextShowable(let nextShowable):
             state.nextShowable = nextShowable
             return .none
@@ -41,9 +47,9 @@ extension RootReducer {
           case .route(let path):
             state = environment.pathHandler.getRootState(path)
             state.path = path
-            return Just(state.nextShowableSetter)
-              .delay(for: .seconds(1), scheduler: DispatchQueue.main)
-              .catchToEffect(RootAction.setShowables)
+            return .init(value: RootAction.setShowables)
+              .delay(for: delayTime, scheduler: DispatchQueue.main)
+              .eraseToEffect()
 
           case .setShowables:
             if let setter = state.nextShowableSetter {

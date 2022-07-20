@@ -18,6 +18,9 @@ struct PathHandler {
 
     case .modalGreen:
       return makeModalGreenPath()
+
+    case .modalGreenWebView:
+      return makeModalGreenWebView()
     }
   }
 
@@ -40,6 +43,21 @@ struct PathHandler {
     RootState(
       first: .init(
         modal: .init(
+          nextShowableSetter: true
+        ),
+        modalShowableSetter: true
+      ),
+      nextShowableSetter: true
+    )
+  }
+
+  private func makeModalGreenWebView() -> RootState {
+    RootState(
+      first: .init(
+        modal: .init(
+          second:.init(
+            modalShowableSetter: true
+          ),
           nextShowableSetter: true
         ),
         modalShowableSetter: true

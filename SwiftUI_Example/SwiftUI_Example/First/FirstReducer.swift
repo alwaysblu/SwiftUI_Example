@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Combine
 
 typealias FirstReducer = Reducer<
   FirstState,
@@ -34,16 +35,10 @@ extension FirstReducer {
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            if let setter = state.nextShowableSetter {
-              state.nextShowable = setter
-              state.nextShowableSetter = nil
-            }
-            if let setter = state.modalShowableSetter {
-              state.modalShowable = setter
-              state.modalShowableSetter = nil
-            }
             environment.notificationHandler.push()
-            return .none
+            return .init(value: .setShowables)
+              .delay(for: delayTime, scheduler: DispatchQueue.main)
+              .eraseToEffect()
 
           case .secondAction:
             return .none
@@ -60,6 +55,17 @@ extension FirstReducer {
 
           case .setNextShowable(let nextShowable):
             state.nextShowable = nextShowable
+            return .none
+
+          case .setShowables :
+            if let setter = state.nextShowableSetter {
+              state.nextShowable = setter
+              state.nextShowableSetter = nil
+            }
+            if let setter = state.modalShowableSetter {
+              state.modalShowable = setter
+              state.modalShowableSetter = nil
+            }
             return .none
           }
         }
