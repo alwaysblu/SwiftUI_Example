@@ -9,7 +9,7 @@ import ComposableArchitecture
 import Combine
 
 struct RootState: Equatable {
-  var navState: NavigationState<KeyPath<FirstState, Bool>> {
+  var navState: NavigationState<KeyPath<RootState, Bool>> {
     didSet {
       nextShowable = navState.showableStates[\.nextShowable] ?? false
       navState.showableStates[\.nextShowable] = nil
@@ -20,7 +20,7 @@ struct RootState: Equatable {
   var path: NavigationPath?
 
   init(
-    navState: NavigationState<KeyPath<FirstState, Bool>> = .init(),
+    navState: NavigationState<KeyPath<RootState, Bool>> = .init(),
     nextShowable: Bool = false,
     first: FirstState = .init(),
     path: NavigationPath? = nil

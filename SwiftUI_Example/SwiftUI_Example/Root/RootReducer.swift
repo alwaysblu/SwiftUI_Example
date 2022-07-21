@@ -43,7 +43,6 @@ extension RootReducer {
             }
             return .init(value: .navigationAction(.onAppear))
 
-
           case .setNextShowable(let nextShowable):
             state.nextShowable = nextShowable
             return .none

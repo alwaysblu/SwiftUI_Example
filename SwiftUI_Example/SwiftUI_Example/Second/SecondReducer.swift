@@ -18,12 +18,19 @@ extension SecondReducer {
   init() {
     self = Self
       .combine(
+        NavigationReducer<KeyPath<SecondState, Bool>>()
+          .make()
+          .pullback(
+            state: \.navState,
+            action: /SecondAction.navigationAction,
+            environment: { _ in
+              NavigationEnvironment()
+            }
+          ),
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            return Just(state.id)
-                .delay(for: state.delayTime, scheduler: DispatchQueue.main)
-                .catchToEffect(SecondAction.setShowables)
+            return .none
 
           case .setModalShowable(let modalShowable):
             state.modalShowable = modalShowable
@@ -32,16 +39,8 @@ extension SecondReducer {
           case .binding:
             return .none
 
-          case .setShowables(.success(let id)):
-            guard state.id == id else {
-              return .none
-            }
-            if let setter = state.modalShowableSetter {
-              state.modalShowable = setter
-              state.modalShowableSetter = nil
-            }
+          case .navigationAction:
             return .none
-            
           }
         }
       )

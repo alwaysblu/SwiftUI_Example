@@ -38,6 +38,7 @@ struct SecondView: View {
     }
     .onAppear {
       viewStore.send(.onAppear)
+      viewStore.send(.navigationAction(.onAppear))
     }
     .onDisappear {
       viewStore.send(.setModalShowable(false))

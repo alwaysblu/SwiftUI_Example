@@ -8,20 +8,19 @@
 import ComposableArchitecture
 
 struct SecondState: Equatable {
+  var navState: NavigationState<KeyPath<SecondState, Bool>> {
+    didSet {
+      modalShowable = navState.showableStates[\.modalShowable] ?? false
+      navState.showableStates[\.modalShowable] = nil
+    }
+  }
   @BindableState var modalShowable: Bool
-  var modalShowableSetter: Bool?
-  var id: UUID
-  var delayTime: DispatchQueue.SchedulerTimeType.Stride
 
   init(
-    modalShowable: Bool = false,
-    modalShowableSetter: Bool? = nil,
-    id: UUID = UUID(),
-    delayTime: Int = 50
+    navState: NavigationState<KeyPath<SecondState, Bool>> = .init(),
+    modalShowable: Bool = false
   ) {
+    self.navState = navState
     self.modalShowable = modalShowable
-    self.modalShowableSetter = modalShowableSetter
-    self.id = id
-    self.delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(delayTime)
   }
 }

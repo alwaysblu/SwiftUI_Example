@@ -8,7 +8,7 @@
 import Foundation
 
 struct PathHandler {
-  private let delayTime = 30
+  private let delayTime = 50
 
   func getRootState(_ path: NavigationPath) -> RootState {
     switch path {
@@ -81,8 +81,10 @@ struct PathHandler {
         ),
         modal: .init(
           second:.init(
-            modalShowableSetter: true,
-            delayTime: delayTime
+            navState: .init(
+              showableSetters: [\.modalShowable: true],
+              delayTime: delayTime
+            )
           ),
           nextShowableSetter: true,
           delayTime: delayTime
