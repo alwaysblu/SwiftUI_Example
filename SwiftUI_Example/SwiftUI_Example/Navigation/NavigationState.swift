@@ -9,13 +9,13 @@ import Foundation
 
 struct NavigationState<Key>: Equatable where Key: Hashable {
   var showableStates: [Key: Bool]
-  var showableSetters: [Key: Bool?]
+  var showableSetters: [Key: Bool]
   var id: UUID
   var delayTime: DispatchQueue.SchedulerTimeType.Stride
 
   init(
     showableStates: [Key: Bool] = [:],
-    showableSetters: [Key: Bool?] = [:],
+    showableSetters: [Key: Bool] = [:],
     id: UUID = UUID(),
     delayTime: Int = 50
   ) {
