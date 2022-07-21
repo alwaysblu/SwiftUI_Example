@@ -9,10 +9,6 @@ import ComposableArchitecture
 import SwiftUI
 
 struct NavigationState<Key>: Equatable where Key: Hashable {
-  static func == (lhs: NavigationState<Key>, rhs: NavigationState<Key>) -> Bool {
-    return lhs.showableStates == rhs.showableStates && lhs.showableSetters == rhs.showableSetters
-  }
-
   var showableStates: [Key: Bool]
   var showableSetters: [Key: Bool?]
   var id: UUID
@@ -28,11 +24,5 @@ struct NavigationState<Key>: Equatable where Key: Hashable {
     self.showableSetters = showableSetters
     self.id = id
     self.delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(delayTime)
-  }
-}
-
-extension Binding: Equatable where Value == Bool {
-  public static func == (lhs: Binding<Value>, rhs: Binding<Value>) -> Bool {
-    lhs.wrappedValue == rhs.wrappedValue
   }
 }
