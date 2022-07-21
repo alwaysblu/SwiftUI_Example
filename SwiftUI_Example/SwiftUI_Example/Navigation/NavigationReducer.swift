@@ -26,7 +26,7 @@ struct NavigationReducer<Key> {
           return .none
         }
         for value in state.showableSetters {
-          state.showableStates[value.key] =  value.value
+          state.showableStates[value.key] = value.value
           state.showableSetters[value.key] = nil
         }
         return .none
