@@ -32,13 +32,20 @@ extension FirstReducer {
             ModalEnvironment()
           }
         ),
+        NavigationReducer<KeyPath<FirstState, Bool>>()
+          .make()
+          .pullback(
+            state: \.navState,
+            action: /FirstAction.navigationAction,
+            environment: { _ in
+              NavigationEnvironment()
+            }
+          ),
         .init { state, action, environment in
           switch action {
           case .onAppear:
             environment.notificationHandler.push()
-            return Just(state.id)
-                .delay(for: state.delayTime, scheduler: DispatchQueue.main)
-                .catchToEffect(FirstAction.setShowables)
+            return .none
 
           case .secondAction:
             return .none
@@ -57,20 +64,8 @@ extension FirstReducer {
             state.nextShowable = nextShowable
             return .none
 
-          case .setShowables(.success(let id)) :
-            guard state.id == id else {
-              return .none
-            }
-            if let setter = state.nextShowableSetter {
-              state.nextShowable = setter
-              state.nextShowableSetter = nil
-            }
-            if let setter = state.modalShowableSetter {
-              state.modalShowable = setter
-              state.modalShowableSetter = nil
-            }
+          case .navigationAction:
             return .none
-
           }
         }
       ).binding()

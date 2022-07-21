@@ -9,39 +9,30 @@ import ComposableArchitecture
 import SwiftUI
 
 struct FirstState: Equatable {
+  var navState: NavigationState<KeyPath<FirstState, Bool>> {
+    didSet {
+      nextShowable = navState.showableStates[\.nextShowable] ?? false
+      modalShowable = navState.showableStates[\.modalShowable] ?? false
+      navState.showableStates[\.nextShowable] = nil
+      navState.showableStates[\.modalShowable] = nil
+    }
+  }
   var second: SecondState
   var modal: ModalState
   @BindableState var nextShowable: Bool
   @BindableState var modalShowable: Bool
 
-
-  var navState: NavigationState<KeyPath<FirstState, Bool>>
-  var nextShowableSetter: Bool?
-  var modalShowableSetter: Bool?
-  var id: UUID
-  var delayTime: DispatchQueue.SchedulerTimeType.Stride
-
   init(
+    navState: NavigationState<KeyPath<FirstState, Bool>> = .init(),
     nextShowable: Bool = false,
     modalShowable: Bool = false,
     second: SecondState = .init(),
-    modal: ModalState = .init(),
-    navState: NavigationState<KeyPath<FirstState, Bool>> = .init(),
-    nextShowableSetter: Bool? = false,
-    modalShowableSetter: Bool? = nil,
-    id: UUID = UUID(),
-    delayTime: Int = 50
+    modal: ModalState = .init()
   ) {
+    self.navState = navState
     self.modalShowable = modalShowable
     self.nextShowable = nextShowable
     self.second = second
     self.modal = modal
-    self.nextShowableSetter = nextShowableSetter
-    self.modalShowableSetter = modalShowableSetter
-    self.id = id
-    self.delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(delayTime)
-    self.navState = navState
-    self.navState.showableSetters[\.nextShowable] = nil
-    self.navState.showableSetters[\.modalShowable] = nil
   }
 }

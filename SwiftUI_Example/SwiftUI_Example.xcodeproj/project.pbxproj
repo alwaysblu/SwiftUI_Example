@@ -48,6 +48,9 @@
 		25C3EC512880212B000A1B93 /* AlwaysEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */; };
 		25C3EC542881285C000A1B93 /* FNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC532881285C000A1B93 /* FNavigationStack.swift */; };
 		25C3EC5628812872000A1B93 /* FNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3EC5528812872000A1B93 /* FNavigationStackView.swift */; };
+		25DA73CC2888D414004BC256 /* NavigationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA73CB2888D414004BC256 /* NavigationReducer.swift */; };
+		25DA73CE2888D6CF004BC256 /* NavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA73CD2888D6CF004BC256 /* NavigationAction.swift */; };
+		25DA73D12888E3D3004BC256 /* NavigationEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA73D02888E3D3004BC256 /* NavigationEnvironment.swift */; };
 		8AA638FB2888B2B4003A97A5 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA638FA2888B2B3003A97A5 /* NavigationState.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +116,9 @@
 		25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysEquatable.swift; sourceTree = "<group>"; };
 		25C3EC532881285C000A1B93 /* FNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNavigationStack.swift; sourceTree = "<group>"; };
 		25C3EC5528812872000A1B93 /* FNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNavigationStackView.swift; sourceTree = "<group>"; };
+		25DA73CB2888D414004BC256 /* NavigationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationReducer.swift; sourceTree = "<group>"; };
+		25DA73CD2888D6CF004BC256 /* NavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAction.swift; sourceTree = "<group>"; };
+		25DA73D02888E3D3004BC256 /* NavigationEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnvironment.swift; sourceTree = "<group>"; };
 		8AA638FA2888B2B3003A97A5 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +166,6 @@
 				256693972885F7920095C99E /* NavigationPath.swift */,
 				2566939A2885FF660095C99E /* NotificationHandler.swift */,
 				2566939C2885FF710095C99E /* PathHandler.swift */,
-				8AA638FA2888B2B3003A97A5 /* NavigationState.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 		259DF064285B2281001D7F90 /* SwiftUI_Example */ = {
 			isa = PBXGroup;
 			children = (
+				25DA73CF2888E30C004BC256 /* Navigation */,
 				256693962885F77E0095C99E /* Common */,
 				25C3EC18287E67A4000A1B93 /* Root */,
 				25C3EC02287E5C96000A1B93 /* First */,
@@ -296,6 +302,17 @@
 				25C3EC5528812872000A1B93 /* FNavigationStackView.swift */,
 			);
 			path = FNavigationStack;
+			sourceTree = "<group>";
+		};
+		25DA73CF2888E30C004BC256 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8AA638FA2888B2B3003A97A5 /* NavigationState.swift */,
+				25DA73CB2888D414004BC256 /* NavigationReducer.swift */,
+				25DA73CD2888D6CF004BC256 /* NavigationAction.swift */,
+				25DA73D02888E3D3004BC256 /* NavigationEnvironment.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +457,7 @@
 				25C3EC15287E61A3000A1B93 /* ModalEnvironment.swift in Sources */,
 				25C3EC20287E71B2000A1B93 /* RootAction.swift in Sources */,
 				25C3EBEC2875A74E000A1B93 /* SecondReducer.swift in Sources */,
+				25DA73CE2888D6CF004BC256 /* NavigationAction.swift in Sources */,
 				25C3EC4A28800E23000A1B93 /* Pop.swift in Sources */,
 				25C3EC5628812872000A1B93 /* FNavigationStackView.swift in Sources */,
 				25C3EC4C28800E36000A1B93 /* Push.swift in Sources */,
@@ -450,6 +468,7 @@
 				25C3EC512880212B000A1B93 /* AlwaysEquatable.swift in Sources */,
 				256693982885F7920095C99E /* NavigationPath.swift in Sources */,
 				25C3EC0C287E5CA6000A1B93 /* FirstState.swift in Sources */,
+				25DA73CC2888D414004BC256 /* NavigationReducer.swift in Sources */,
 				25C3EC08287E5CA6000A1B93 /* FirstAction.swift in Sources */,
 				25C3EBEA2875A74E000A1B93 /* SecondView.swift in Sources */,
 				25C3EC21287E71B2000A1B93 /* RootView.swift in Sources */,
@@ -457,6 +476,7 @@
 				25C3EBED2875A74E000A1B93 /* SecondState.swift in Sources */,
 				25C3EC0B287E5CA6000A1B93 /* FirstReducer.swift in Sources */,
 				25C3EBEB2875A74E000A1B93 /* SecondEnvironment.swift in Sources */,
+				25DA73D12888E3D3004BC256 /* NavigationEnvironment.swift in Sources */,
 				2566939D2885FF710095C99E /* PathHandler.swift in Sources */,
 				25C3EC542881285C000A1B93 /* FNavigationStack.swift in Sources */,
 				25C3EC14287E61A3000A1B93 /* ModalView.swift in Sources */,

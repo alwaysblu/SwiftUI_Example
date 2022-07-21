@@ -45,6 +45,7 @@ struct FirstView: View {
       )
       .onAppear {
         viewStore.send(.onAppear)
+        viewStore.send(.navigationAction(.onAppear))
       }
     }
   }
