@@ -163,9 +163,7 @@
 			children = (
 				25C3EC502880212B000A1B93 /* AlwaysEquatable.swift */,
 				256A5A082873E1CB00428616 /* WebView.swift */,
-				256693972885F7920095C99E /* NavigationPath.swift */,
 				2566939A2885FF660095C99E /* NotificationHandler.swift */,
-				2566939C2885FF710095C99E /* PathHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -311,6 +309,8 @@
 				25DA73CB2888D414004BC256 /* NavigationReducer.swift */,
 				25DA73CD2888D6CF004BC256 /* NavigationAction.swift */,
 				25DA73D02888E3D3004BC256 /* NavigationEnvironment.swift */,
+				256693972885F7920095C99E /* NavigationPath.swift */,
+				2566939C2885FF710095C99E /* PathHandler.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";

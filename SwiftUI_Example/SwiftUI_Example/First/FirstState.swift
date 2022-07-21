@@ -6,7 +6,6 @@
 //
 
 import ComposableArchitecture
-import SwiftUI
 
 struct FirstState: Equatable {
   var navState: NavigationState<KeyPath<FirstState, Bool>> {

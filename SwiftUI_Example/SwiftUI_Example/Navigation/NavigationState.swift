@@ -5,8 +5,7 @@
 //  Created by 최정민 on 2022/07/21.
 //
 
-import ComposableArchitecture
-import SwiftUI
+import Foundation
 
 struct NavigationState<Key>: Equatable where Key: Hashable {
   var showableStates: [Key: Bool]

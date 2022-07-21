@@ -7,7 +7,6 @@
 
 import Combine
 import ComposableArchitecture
-import SwiftUI
 
 struct NavigationReducer<Key> {
   func make() -> Reducer<

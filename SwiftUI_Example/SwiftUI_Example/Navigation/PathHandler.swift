@@ -27,26 +27,34 @@ struct PathHandler {
 
   private func makeGreenPath(delayTime: Int) -> RootState {
     RootState(
+      navState: .init(
+        showableSetters: [\.nextShowable: true],
+        delayTime: delayTime
+      ),
       first: .init(
         navState: .init(
           showableSetters: [\.nextShowable: true],
           delayTime: delayTime
         )
-      ),
-      nextShowableSetter: true,
-      delayTime: delayTime
-   )
+      )
+    )
   }
 
   private func makePurplePath(delayTime: Int) -> RootState {
     RootState(
-      nextShowableSetter: true,
-      delayTime: delayTime
+      navState: .init(
+        showableSetters: [\.nextShowable: true],
+        delayTime: delayTime
+      )
     )
   }
 
   private func makeModalGreenPath(delayTime: Int) -> RootState {
     RootState(
+      navState: .init(
+        showableSetters: [\.nextShowable: true],
+        delayTime: delayTime
+      ),
       first: .init(
         navState: .init(
           showableSetters: [\.modalShowable: true],
@@ -56,14 +64,16 @@ struct PathHandler {
           nextShowableSetter: true,
           delayTime: delayTime
         )
-      ),
-      nextShowableSetter: true,
-      delayTime: delayTime
+      )
     )
   }
 
   private func makeModalGreenWebView(delayTime: Int) -> RootState {
     RootState(
+      navState: .init(
+        showableSetters: [\.nextShowable: true],
+        delayTime: delayTime
+      ),
       first: .init(
         navState: .init(
           showableSetters: [\.modalShowable: true],
@@ -77,9 +87,7 @@ struct PathHandler {
           nextShowableSetter: true,
           delayTime: delayTime
         )
-      ),
-      nextShowableSetter: true,
-      delayTime: delayTime
+      )
     )
   }
 }

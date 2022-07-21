@@ -7,29 +7,27 @@
 
 import ComposableArchitecture
 import Combine
-import SwiftUI
 
 struct RootState: Equatable {
+  var navState: NavigationState<KeyPath<FirstState, Bool>> {
+    didSet {
+      nextShowable = navState.showableStates[\.nextShowable] ?? false
+      navState.showableStates[\.nextShowable] = nil
+    }
+  }
   @BindableState var nextShowable: Bool
   @AlwaysEquatable var first: FirstState
   var path: NavigationPath?
-  var nextShowableSetter: Bool?
-  var id: UUID
-  var delayTime: DispatchQueue.SchedulerTimeType.Stride
 
   init(
+    navState: NavigationState<KeyPath<FirstState, Bool>> = .init(),
     nextShowable: Bool = false,
     first: FirstState = .init(),
-    path: NavigationPath? = nil,
-    nextShowableSetter: Bool? = nil,
-    id: UUID = .init(),
-    delayTime: Int = 50
+    path: NavigationPath? = nil
   ) {
+    self.navState = navState
     self.nextShowable = nextShowable
     self.first = first
     self.path = path
-    self.nextShowableSetter = nextShowableSetter
-    self.id = id
-    self.delayTime = DispatchQueue.SchedulerTimeType.Stride.milliseconds(delayTime)
   }
 }
