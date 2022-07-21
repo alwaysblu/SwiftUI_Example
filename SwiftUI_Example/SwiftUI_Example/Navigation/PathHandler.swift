@@ -61,8 +61,10 @@ struct PathHandler {
           delayTime: delayTime
         ),
         modal: .init(
-          nextShowableSetter: true,
-          delayTime: delayTime
+          navState: .init(
+            showableSetters: [\.nextShowable: true],
+            delayTime: delayTime
+          )
         )
       )
     )
@@ -80,14 +82,16 @@ struct PathHandler {
           delayTime: delayTime
         ),
         modal: .init(
+          navState: .init(
+            showableSetters: [\.nextShowable: true],
+            delayTime: delayTime
+          ),
           second:.init(
             navState: .init(
               showableSetters: [\.modalShowable: true],
               delayTime: delayTime
             )
-          ),
-          nextShowableSetter: true,
-          delayTime: delayTime
+          )
         )
       )
     )
