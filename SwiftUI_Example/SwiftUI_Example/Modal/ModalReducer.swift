@@ -25,12 +25,19 @@ extension ModalReducer {
             SecondEnvironment()
           }
         ),
+        NavigationReducer<KeyPath<ModalState, Bool>>()
+          .make()
+          .pullback(
+            state: \.navState,
+            action: /ModalAction.navigationAction,
+            environment: { _ in
+              NavigationEnvironment()
+            }
+          ),
         .init { state, action, environment in
           switch action {
           case .onAppear:
-            return Just(state.id)
-                .delay(for: state.delayTime, scheduler: DispatchQueue.main)
-                .catchToEffect(ModalAction.setShowables)
+            return .init(value: .navigationAction(.onAppear))
 
           case.secondAction:
             return .none
@@ -41,17 +48,9 @@ extension ModalReducer {
 
           case .binding:
             return .none
-
-          case .setShowables(.success(let id)):
-            guard state.id == id else {
-              return .none
-            }
-            if let setter = state.nextShowableSetter {
-              state.nextShowable = setter
-              state.nextShowableSetter = nil
-            }
-            return .none
             
+          case .navigationAction:
+            return .none
           }
         }
       ).binding()
